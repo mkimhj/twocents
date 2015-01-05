@@ -1,0 +1,28 @@
+/* when the card is identified, add a green border */
+.cc-num.identified{
+  border-color:#2ecc71;
+}
+
+/* when the card is identified on focus, make the box-shadow glow green too */
+.cc-num.identified:focus{
+  border-color:#2ecc71;
+  box-shadow: 0 0 .1875em #2ecc71;
+}
+
+/* style the blank card element */
+.card {
+  position:absolute;
+  display:block;
+  right:.375em;
+  top:50%;
+  margin-top:-10px;
+  width:28px;
+  height:19px;
+  background:url('img/card.png') no-repeat center center;
+  background-size: 100%;
+}
+
+/* replace the blank card with the card type */
+.cc-num.visa + .card{
+  background-image:url('img/visa.png');
+}
