@@ -1,11 +1,13 @@
 // include jquery and jquery.payment before here
 
+function validateEmail(email) { 
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
 $(function() {
-  function validateEmail(email) { 
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-  } 
   
+  //Function for highlighting boxes green upon completion
   var validateDetails = function() {
     // set variables for the expiry date validation, cvc validation and expiry date 'splitter'
     var name = $('input.full-name').val();

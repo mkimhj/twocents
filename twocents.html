@@ -17,6 +17,20 @@
 	<article id="how-it-works">
 	</article>
 
+	{{> team}}
+
+	{{> payment}}
+</body>
+
+
+<!-- TODO: PUT TEMPLATES IN SEPARATE HTML FILE -->
+<template name="video">		
+	<article id="splash" class="{{#if played}}black{{else}}wallpaper{{/if}}">
+		<div id="player"></div>
+	</article>
+</template>
+
+<template name="team">
 	<article id="team"><center>
 		<h1 class="section-header">Our Team</h1>
 		<div class='founder-row'>
@@ -46,51 +60,13 @@
 		</div>
 	</center>
 	</article>
-
-	{{> payment}}
-
-
-	<script>
-		// Smooth scrolling
-		$(function() {
-		  $('a[href*=#]:not([href=#])').click(function() {
-		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		      var target = $(this.hash);
-		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		      if (target.length) {
-		        $('html,body').animate({
-		          scrollTop: target.offset().top
-		        }, 500);
-		        return false;
-		      }
-		    }
-		  });
-		});
-
-		// Navigation appears
-		$(window).scroll(function() {
-		  var scrollHeight = $(document).scrollTop();
-		  var bodyHeight = $("body").height();
-		  if (scrollHeight >= bodyHeight/4) {
-		    $("#navigation").removeClass("hidden");
-		  } else {
-		    $("#navigation").addClass("hidden");
-		  }
-		});
-	</script>
-</body>
-
-<template name="video">		
-	<article id="splash" class="{{#if played}}black{{else}}wallpaper{{/if}}">
-		<div id="player"></div>
-	</article>
 </template>
 
 <template name="payment">
 	<article id="donate">
 
-			<h1 class="section-header">Donate</h1>		
-			<label class="button button-primary" for="modal-one">Donate</label>
+		<h1 class="section-header">Donate</h1>		
+		<label class="button button-primary" for="modal-one">Donate</label>
 
 		<div class="modal">
 		  <input class="modal-open" id="modal-one" type="checkbox" hidden>

@@ -6,7 +6,6 @@
 
 meteor-platform
 autopublish
-insecure
 jquery
 adrianliaw:youtube-iframe-api
 grove:stripe.js
