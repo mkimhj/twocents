@@ -1,0 +1,8 @@
+{
+	"stripe_test_secret_key": "sk_test_Jy22poJjg8yfXWepvXhiADsz",
+	"stripe_live_secret_ley": "sk_live_0YtdLRleu2HQvDizLcyb5fl7",
+	"public": {
+		"stripe_test_public_key":"pk_test_oE3JYruQ7Oe9BC0jAKGB1YLi",
+		"stripe_live_public_key": "pk_live_N4swdMJjQURqO8KBwLzBJH5c"
+	}
+}
