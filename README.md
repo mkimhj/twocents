@@ -14,6 +14,7 @@ APIs: Stripe, Youtube
 meteor --settings config/settings.json
 
 **To deploy:** (Haven't looked into deploying with a settings.json file yet)
+
 meteor deploy twocentsaday.com & meteor deploy www.twocentsaday.com
 
 Directory Hierarchy
