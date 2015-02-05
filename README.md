@@ -23,3 +23,33 @@ The client files are loaded only on the user side. Anything in the public folder
 Inside config are our API keys, Public Keys are viewable on the client side, while anything outside of the Public section is loaded only on server side.
 
 I did my best to organize the code while writing everything, but it's still very disorganized. Templates in the twocents.html can be put into separate files etc. I will try to organize everything better in the upcoming weeks.
+
+Other than that, good folder structure is outlined in this stackoverflow post, it's unofficial, so take it for a grain of salt: 
+http://stackoverflow.com/questions/10122977/what-are-the-best-practices-for-structuring-a-large-meteor-app-with-many-html-te
+
+Todo List
+========
+**Directory**
+* Add a gitignore for files that shouldn't be in the repo
+* Organize the massive twocents.html file into separate html files
+* Move the client javascript into a client/js/twocents.js file
+* Move the server javascript into a server/js/twocents.js file
+
+**Implementation**
+* Handle rejection of form if user has already signed up (check against MongoDB)
+* Save user emails into MongoDB, and look into how to review list of emails
+* Send users a confirmation email maybe using SendGrid (https://sendgrid.com)
+* Figure out what to put in the "How it works" section.
+* Implement tabs in the form and integrate Paypal if we find it necessary.
+
+**Style**
+* Style and make the Donation page view look better.
+* Create a better "Finished Form" page other than some text
+* Restrict the toolbar to be of a certain width? The logo and the buttons width are currently maxed out to the page
+* Find a better color scheme that represents us.
+* Create pngs? Or maybe find someone in InnoD who would be willing to find pngs.
+* By no means is the font and such finalized, feel free to explore any better options and share.
+
+**Logistics**
+* Find a nonprofit, maybe two, to connect with and start marketing once site is up and running.
+* Get a corporate / nonprofit bank account to connect Stripe with.
