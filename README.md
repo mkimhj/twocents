@@ -35,6 +35,7 @@ Todo List
 * Organize the massive twocents.html file into separate html files
 * Move the client javascript into a client/js/twocents.js file
 * Move the server javascript into a server/js/twocents.js file
+* It would definitely help code readability to move Youtube stuff in a youtube.js, stripe payments to a stripeHandler.js file, etc. 
 
 **Implementation**
 * Handle rejection of form if user has already signed up (check against MongoDB)
