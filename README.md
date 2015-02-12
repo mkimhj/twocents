@@ -31,7 +31,7 @@ http://stackoverflow.com/questions/10122977/what-are-the-best-practices-for-stru
 Todo List
 ========
 **Directory**
-* Add a gitignore for files that shouldn't be in the repo
+~~* Add a gitignore for files that shouldn't be in the repo~~
 * Organize the massive twocents.html file into separate html files
 * Move the client javascript into a client/js/twocents.js file
 * Move the server javascript into a server/js/twocents.js file
