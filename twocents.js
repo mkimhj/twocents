@@ -4,6 +4,10 @@ Users = new Mongo.Collection("users");
 if (Meteor.isClient) {
   Stripe.setPublishableKey(Meteor.settings.public.STRIPE_TEST_PUBLIC_KEY);
 
+  //Session variables for form CSS
+  Session.set("submitted", false);
+  Session.set("success", false);
+
   //Youtube object to change the state of the splash page's background based on whether or not the video is playing.
   onYouTubeIframeAPIReady = function () {
       player = new YT.Player("player", {
@@ -40,6 +44,15 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.payment.helpers({
+    submitted: function() {
+      return Session.get("submitted");
+    },
+    success: function() {
+      return Session.get("success");
+    }
+  });
+
   //Format credit card boxes
   Template.payment.rendered = function () {
     $('input.cc-num').payment('formatCardNumber');
@@ -47,7 +60,7 @@ if (Meteor.isClient) {
     $('input.cc-cvc').payment('formatCardCVC');
   };
 
-  //Handle Payment Form events
+  //Handle Payment Form events (TODO: Send the comment text to an email)
   Template.payment.events({
     'submit #donation-form': function(event) {
       //Prevent default form submission.
@@ -77,6 +90,8 @@ if (Meteor.isClient) {
         alert("Please check your name!");
       } else {
         //Populate hidden month and year folds for Stripe API
+        Session.set("submitted", true);
+        Session.set("success", false);
         $("#stripeMonth").val($('input.cc-exp').payment('cardExpiryVal').month);
         $("#stripeYear").val($('input.cc-exp').payment('cardExpiryVal').year);
 
@@ -96,7 +111,7 @@ if (Meteor.isClient) {
     console.log("Response from Stripe!");
     console.log(response);
     if (response.error) {
-      //Log any errors, if any.
+      //Log any errors, if any. TODO: Handle the errors.
       console.log(response.error);
     } else {
       //Create a customer on the server side
@@ -106,6 +121,7 @@ if (Meteor.isClient) {
           return;
         }
         Session.set('serverDataResponse', response);
+        Session.set("success", true);
       });
     }
   };

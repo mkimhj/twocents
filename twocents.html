@@ -22,7 +22,6 @@
 	{{> payment}}
 </body>
 
-
 <!-- TODO: PUT TEMPLATES IN SEPARATE HTML FILE -->
 <template name="video">		
 	<article id="splash" class="{{#if played}}black{{else}}wallpaper{{/if}}">
@@ -78,8 +77,11 @@
 		        <label class="btn-close" for="modal-one" aria-hidden="true">× </label>
 		      </div>
 		      <div class="modal-body">
-				<!-- The above form looks like this -->
-				<form id='donation-form'>
+				<div class="loader {{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"></div>
+
+				<!-- TODO STYLE THIS SHIT AND CLOSE THE WINDOW -->
+				<div class="{{#if success}}show{{else}}hide{{/if}}">Success! Thanks, your donations will help save the world.</div>
+				<form id='donation-form' class="{{#if submitted}}hide{{else}}show{{/if}}">
 				  <div class="row">
 				    <div class="six columns">
 				      <label for="nameInput">Your name</label>
