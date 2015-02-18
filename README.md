@@ -31,16 +31,16 @@ http://stackoverflow.com/questions/10122977/what-are-the-best-practices-for-stru
 Todo List
 ========
 **Directory**
-* Add a gitignore for files that shouldn't be in the repo
-* Organize the massive twocents.html file into separate html files
-* Move the client javascript into a client/js/twocents.js file
-* Move the server javascript into a server/js/twocents.js file
-* It would definitely help code readability to move Youtube stuff in a youtube.js, stripe payments to a stripeHandler.js file, etc. 
+* ~~Add a gitignore for files that shouldn't be in the repo~~
+* ~~Organize the massive twocents.html file into separate html files~~
+* ~~Move the client javascript into a client/js/twocents.js file~~
+* ~~Move the server javascript into a server/js/twocents.js file~~
+* ~~It would definitely help code readability to move Youtube stuff in a youtube.js, stripe payments to a stripeHandler.js file, etc.~~
 
 **Implementation**
 * Handle rejection of form if user has already signed up (check against MongoDB)
 * Save user emails into MongoDB, and look into how to review list of emails
-* Send users a confirmation email maybe using SendGrid (https://sendgrid.com)
+* Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com)
 * Figure out what to put in the "How it works" section.
 * Implement tabs in the form and integrate Paypal if we find it necessary.
 
