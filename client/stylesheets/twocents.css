@@ -173,6 +173,12 @@ iframe {
   display: true;
 }
 
+#navbar {
+  max-width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #navigation {
   z-index: 1;
   background: rgba(0, 0, 0, 0.9);

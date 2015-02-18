@@ -7,7 +7,7 @@ if (Meteor.isServer) {
     Stripe = StripeAPI(Meteor.settings.STRIPE_TEST_SECRET_KEY);
   });
 
-  //Client handler for creating customers.
+  //Client handler for creating customers. Check if email is already signed up.
   Meteor.methods({
     createCustomer: function (token, address, timestamp) {
       Stripe.customers.create({
