@@ -1,0 +1,63 @@
+.paymentInput.identified{
+  border-color:#2ecc71;
+}
+ 
+.paymentInput.identified:focus{
+  border-color:#2ecc71;
+  box-shadow: 0 0 .1875em #2ecc71;
+}
+ 
+.cc-num__wrap{
+  position:relative;
+}
+ 
+.card{
+  position:absolute;
+  display:block;
+  right:.375em;
+  top:46%;
+  margin-top:-10px;
+  width:28px;
+  height:28px;
+  background:url(img/card.png) no-repeat center center;
+  background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+ 
+/*.cardInfo__cc-exp,
+.cardInfo__cc-cvc{
+  float:left;
+  max-width:4.875em;
+}
+ 
+.cardInfo__cc-exp{
+  margin-right:.75em;
+}*/
+ 
+.cc-num.visa + .card{
+  background:url('img/visa.png') no-repeat center center;
+  background-size: 100%;
+}
+ 
+.cc-num.amex + .card{
+  background:url('img/amex.png') no-repeat center center;
+  background-size: 100%;
+}
+ 
+.cc-num.mastercard + .card{
+  background:url('img/mastercard.png') no-repeat center center;
+  background-size: 100%;
+}
+ 
+.cc-num.diners + .card{
+  background:url('img/diners.png') no-repeat center center;
+  background-size: 100%;
+}
+ 
+.cc-num.discover + .card{
+  background:url('img/discover.png') no-repeat center center;
+  background-size: 100%;
+}
