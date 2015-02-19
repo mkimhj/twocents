@@ -56,8 +56,9 @@ Todo List
 * By no means is the font and such finalized, feel free to explore any better options and share.
 
 **Logistics**
-* Find a nonprofit, maybe two, to connect with and start marketing once site is up and running.
-* Get a corporate / nonprofit bank account to connect our donations with.
+* Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Emily)
+* Get a corporate / nonprofit bank account to connect our donations with. (Shyam)
+* Look for nonprofit funding (Freeventures, YC, etc.)
 
 Server Side Debugging
 ========
