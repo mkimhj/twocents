@@ -28,14 +28,14 @@ if (Meteor.isServer) {
           // do something more meaningful?
           return err;
         });
-      }
 
-      //Insert a new user into the MongoDB (TODO: send a confirmation email)
-      Users.insert({
-        stripeToken: token,
-        email: address,
-        createdAt: timestamp,
-      });
+        //Insert a new user into the MongoDB (TODO: send a confirmation email)
+        Users.insert({
+          stripeToken: token,
+          email: address,
+          createdAt: timestamp,
+        });
       }
+    }
   });
 }
