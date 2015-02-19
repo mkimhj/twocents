@@ -47,7 +47,7 @@ Todo List
 **Style**
 * Style and make the Donation page view to look better.
 * Create a better "Finished Form" page other than some text, maybe the form turns into a two cents png and flies up like in our mobile app video?
-* Restrict the toolbar to be of a certain width (960px)? The logo and the buttons width are currently maxed out to the page
+* ~~Restrict the toolbar to be of a certain width (960px)? The logo and the buttons width are currently maxed out to the page~~
 * Find a better color scheme that represents us.
 * Create pngs? Or maybe find someone in InnoD who would be willing to find pngs.
 * By no means is the font and such finalized, feel free to explore any better options and share.
