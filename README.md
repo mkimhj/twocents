@@ -17,6 +17,8 @@ meteor --settings config/settings.json
 
 meteor deploy twocentsaday.com & meteor deploy www.twocentsaday.com
 
+`meteor list` will show all packages used, remove `autopublish` and `aldeed:console-me` for deployment!
+
 Directory Hierarchy
 ========
 The client files are loaded only on the user side. Anything in the public folder is generally used for static files, for now I've put the credit card pngs and the pictures of our faces inside this folder. Finally, we can make a server folder for loading files only on the server side, for now I haven't found a need for this.
@@ -55,3 +57,6 @@ Todo List
 **Logistics**
 * Find a nonprofit, maybe two, to connect with and start marketing once site is up and running.
 * Get a corporate / nonprofit bank account to connect our donations with.
+
+**Server Side Debugging**
+In line 8 of Meteor.startup you will see `ConsoleMe.enabled = true;`, this opens a subscription for the client to receive console logs from the Server, if you want to enable listening on the client side type `ConsoleMe.subscribe()` in the browser console. Make sure to enter this every time you refresh the page. Also, DISABLE THIS FOR DEPLOYMENT.
