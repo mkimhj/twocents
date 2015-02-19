@@ -58,5 +58,6 @@ Todo List
 * Find a nonprofit, maybe two, to connect with and start marketing once site is up and running.
 * Get a corporate / nonprofit bank account to connect our donations with.
 
-**Server Side Debugging**
+Server Side Debugging
+========
 In line 8 of Meteor.startup you will see `ConsoleMe.enabled = true;`, this opens a subscription for the client to receive console logs from the Server, if you want to enable listening on the client side type `ConsoleMe.subscribe()` in the browser console. Make sure to enter this every time you refresh the page. Also, DISABLE THIS FOR DEPLOYMENT.
