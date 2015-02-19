@@ -14,3 +14,4 @@ grove:stripe-npm
 skeleton:skeleton
 less
 patrickocoffeyo:meteor-jquery-payment
+aldeed:console-me
