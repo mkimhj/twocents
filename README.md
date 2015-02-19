@@ -38,9 +38,9 @@ Todo List
 * ~~It would definitely help code readability to move Youtube stuff in a youtube.js, stripe payments to a stripeHandler.js file, etc.~~
 
 **Implementation**
-* Handle rejection of form if user has already signed up (check against MongoDB)
-* Save user emails into MongoDB, and look into how to review list of emails
-* Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com)
+* ~~Handle rejection of form if user has already signed up (check against MongoDB)~~
+* ~~Save user emails into MongoDB, and look into how to review list of emails~~
+* Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)
 * Figure out what to put in the "How it works" section.
 * Implement tabs in the form and integrate Paypal if we find it necessary.
 
