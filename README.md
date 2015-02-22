@@ -8,6 +8,8 @@ Skeleton CSS: http://getskeleton.com
 
 Less CSS: http://lesscss.org
 
+Sendgrid: https://sendgrid.com
+
 APIs: Stripe, Youtube
 
 **To run locally:**
@@ -43,9 +45,9 @@ Todo List
 * ~~Handle rejection of signup to Stripe if user has already signed up (check against MongoDB)~~
 * ~~Save user emails into MongoDB, and look into how to review list of emails~~
 * Notify client side if their email is already signed up.
-* Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)
+* ~~Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)~~
 * Figure out what to put in the "How it works" section.
-* Connect twocentsaday@gmail.com with confirmation@twocentsaday.com (Emily)
+* ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
 
 **Style**
 * Style and make the Donation page view to look better.
