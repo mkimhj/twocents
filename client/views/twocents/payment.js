@@ -34,36 +34,45 @@ Template.payment.events({
     var expValid = $.payment.validateCardExpiry($('input.cc-exp').payment('cardExpiryVal').month, $('input.cc-exp').payment('cardExpiryVal').year);
     var cvcValid = $.payment.validateCardCVC($('input.cc-cvc').val());
 
+
     //Regex expression for validating email
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var emailValid = re.test(email);
 
-    //Check if each input is valid, once passes all checks send form to Stripe to receive a token
-    if (!cardValid) {
-      alert("Please check your credit card number again!");
-    } else if(!expValid) {
-      alert("Please check your expiration date!");
-    } else if (!cvcValid) {
-      alert("Please check your security code on the back of your card!");
-    } else if (!emailValid) {
-      alert("Please check your email address!");
-    } else if (name == "" || name == null) {
-      alert("Please check your name!");
-    } else {
-      //Populate hidden month and year folds for Stripe API
-      Session.set("submitted", true);
-      Session.set("success", false);
-      $("#stripeMonth").val($('input.cc-exp').payment('cardExpiryVal').month);
-      $("#stripeYear").val($('input.cc-exp').payment('cardExpiryVal').year);
+    Meteor.call('checkEmail', email, function(err, emailExists) {
+      if (err) {
+        return;
+      } else {
+        //Check if each input is valid, once passes all checks send form to Stripe to receive a token
+        if (!cardValid) {
+          alert("Please check your credit card number again!");
+        } else if(!expValid) {
+          alert("Please check your expiration date again!");
+        } else if (!cvcValid) {
+          alert("Please verify your security code on the back of your card!");
+        } else if (!emailValid) {
+          alert("Please fill out your email address!");
+        } else if (name == "" || name == null) {
+          alert("Please check your name!");
+        } else if (emailExists) {
+          alert("You've already signed up!");
+        } else {
+          //Populate hidden month and year folds for Stripe API
+          Session.set("submitted", true);
+          Session.set("success", false);
+          $("#stripeMonth").val($('input.cc-exp').payment('cardExpiryVal').month);
+          $("#stripeYear").val($('input.cc-exp').payment('cardExpiryVal').year);
 
-      var form = $("#donation-form");
+          var form = $("#donation-form");
 
-      // TODO: Disable the submit button to prevent repeated clicks
-      // form.find('button').prop('disabled', true);
+          // TODO: Disable the submit button to prevent repeated clicks below doesn't work...
+          // form.find('button').prop('disabled', true);
 
-      //Pass form to Stripe API
-      Stripe.card.createToken(form, stripeResponseHandler);
-    }
+          //Pass form to Stripe API
+          Stripe.card.createToken(form, stripeResponseHandler);
+        }
+      }
+    });
   }
 });
 
@@ -76,7 +85,7 @@ function stripeResponseHandler(status, response) {
     console.log(response.error);
   } else {
     //Create a customer on the server side
-    Meteor.call('createCustomer', response.id, $('#emailInput').val(), response.created, function(err, response){
+    Meteor.call('createCustomer', response.id, $('input.full-name').val(), $('#emailInput').val(), response.created, function(err, response){
       if(err) {
         Session.set('serverDataResponse', "Error:" + err.reason);
         return;

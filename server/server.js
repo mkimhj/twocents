@@ -7,11 +7,12 @@ if (Meteor.isServer) {
     //console.logs sent to client side (DISABLE FOR DEPLOYMENT)
     ConsoleMe.enabled = true;
     Stripe = StripeAPI(Meteor.settings.STRIPE_TEST_SECRET_KEY);
+    process.env.MAIL_URL = 'smtp://mkim-hj:m1h1kim1@smtp.sendgrid.net:587';
   });
 
   //Client handler for creating customers. Check if email is already signed up.
   Meteor.methods({
-    createCustomer: function (token, address, timestamp) {
+    createCustomer: function (token, name, address, timestamp) {
       var userObject = Users.find({email: address}, {limit:1}).fetch();
       var userExists = (typeof userObject !== 'undefined' && userObject.length > 0);
       console.log(userExists);
@@ -32,9 +33,33 @@ if (Meteor.isServer) {
         //Insert a new user into the MongoDB (TODO: send a confirmation email)
         Users.insert({
           stripeToken: token,
+          name: name,
           email: address,
           createdAt: timestamp,
         });
+    
+        // Let other method calls from the same client start running,
+        // without waiting for the email sending to complete.
+        this.unblock()
+
+        //confirmation email
+        Email.send({
+          from: "info@twocentsaday.com",
+          to: address,
+          subject: "Confirmation Test",
+          text: "Test Text"
+        });
+      }
+    },
+
+    checkEmail: function(email) {
+      var userObject = Users.find({email: email}, {limit:1}).fetch();
+      var userExists = (typeof userObject !== 'undefined' && userObject.length > 0);
+
+      if (userExists) {
+        return true;
+      } else {
+        return false;
       }
     }
   });
