@@ -44,7 +44,7 @@ Todo List
 **Implementation**
 * ~~Handle rejection of signup to Stripe if user has already signed up (check against MongoDB)~~
 * ~~Save user emails into MongoDB, and look into how to review list of emails~~
-* Notify client side if their email is already signed up.
+* ~~Notify client side if their email is already signed up.~~
 * ~~Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)~~
 * Figure out what to put in the "How it works" section.
 * ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
