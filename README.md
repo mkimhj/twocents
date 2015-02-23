@@ -48,6 +48,7 @@ Todo List
 * ~~Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)~~
 * Figure out what to put in the "How it works" section.
 * ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
+* Create an email list for everyone who signs up
 
 **Style**
 * Style and make the Donation page view to look better.
