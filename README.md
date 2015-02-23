@@ -8,6 +8,8 @@ Skeleton CSS: http://getskeleton.com
 
 Less CSS: http://lesscss.org
 
+Sendgrid: https://sendgrid.com
+
 APIs: Stripe, Youtube
 
 **To run locally:**
@@ -16,6 +18,8 @@ meteor --settings config/settings.json
 **To deploy:** (Haven't looked into deploying with a settings.json file yet)
 
 meteor deploy twocentsaday.com & meteor deploy www.twocentsaday.com
+
+`meteor list` will show all packages used, remove `autopublish` and `aldeed:console-me` for deployment!
 
 Directory Hierarchy
 ========
@@ -38,11 +42,13 @@ Todo List
 * ~~It would definitely help code readability to move Youtube stuff in a youtube.js, stripe payments to a stripeHandler.js file, etc.~~
 
 **Implementation**
-* Handle rejection of form if user has already signed up (check against MongoDB)
-* Save user emails into MongoDB, and look into how to review list of emails
-* Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com)
+* ~~Handle rejection of signup to Stripe if user has already signed up (check against MongoDB)~~
+* ~~Save user emails into MongoDB, and look into how to review list of emails~~
+* Notify client side if their email is already signed up.
+* ~~Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)~~
 * Figure out what to put in the "How it works" section.
-* Implement tabs in the form and integrate Paypal if we find it necessary.
+* ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
+* Create an email list for everyone who signs up
 
 **Style**
 * Style and make the Donation page view to look better.
@@ -53,5 +59,10 @@ Todo List
 * By no means is the font and such finalized, feel free to explore any better options and share.
 
 **Logistics**
-* Find a nonprofit, maybe two, to connect with and start marketing once site is up and running.
-* Get a corporate / nonprofit bank account to connect our donations with.
+* Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Emily)
+* Get a corporate / nonprofit bank account to connect our donations with. (Shyam)
+* Look for nonprofit funding (Freeventures, YC, etc.)
+
+Server Side Debugging
+========
+In line 8 of Meteor.startup you will see `ConsoleMe.enabled = true;`, this opens a subscription for the client to receive console logs from the Server, if you want to enable listening on the client side type `ConsoleMe.subscribe()` in the browser console. Make sure to enter this every time you refresh the page. Also, DISABLE THIS FOR DEPLOYMENT.
