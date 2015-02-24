@@ -49,6 +49,7 @@ Todo List
 * ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
 * ~~Create an email list for everyone who signs up~~
 * Integrate google analytics
+* Compress backgroun and pictures of us into smaller jpegs (takes too long to load on server)
 
 **Style**
 * Style and make the Donation page view to look better.
