@@ -15,9 +15,8 @@ APIs: Stripe, Youtube
 **To run locally:**
 meteor --settings config/settings.json
 
-**To deploy:** (Haven't looked into deploying with a settings.json file yet)
-
-meteor deploy twocentsaday.com & meteor deploy www.twocentsaday.com
+**To deploy:** 
+meteor deploy http://www.twocentsaday.com --settings config/settings.json && meteor deploy http://twocentsaday.com --settings config/settings.json
 
 `meteor list` will show all packages used, remove `autopublish` and `aldeed:console-me` for deployment!
 
@@ -44,11 +43,13 @@ Todo List
 **Implementation**
 * ~~Handle rejection of signup to Stripe if user has already signed up (check against MongoDB)~~
 * ~~Save user emails into MongoDB, and look into how to review list of emails~~
-* Notify client side if their email is already signed up.
+* ~~Notify client side if their email is already signed up.~~
 * ~~Send users a confirmation email maybe using SendGrid or MailChimp (https://sendgrid.com) (or use THIS: https://gentlenode.com/journal/meteor-20-verify-an-email-with-meteor-accounts/42)~~
 * Figure out what to put in the "How it works" section.
 * ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
-* Create an email list for everyone who signs up
+* ~~Create an email list for everyone who signs up~~
+* ~~Integrate google analytics~~
+* Compress backgroun and pictures of us into smaller jpegs (takes too long to load on server)
 
 **Style**
 * Style and make the Donation page view to look better.
@@ -57,6 +58,7 @@ Todo List
 * Find a better color scheme that represents us.
 * Create pngs? Or maybe find someone in InnoD who would be willing to find pngs.
 * By no means is the font and such finalized, feel free to explore any better options and share.
+* Make Icon for tab
 
 **Logistics**
 * Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Emily)
