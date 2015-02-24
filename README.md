@@ -57,6 +57,7 @@ Todo List
 * Find a better color scheme that represents us.
 * Create pngs? Or maybe find someone in InnoD who would be willing to find pngs.
 * By no means is the font and such finalized, feel free to explore any better options and share.
+* Make Icon for tab
 
 **Logistics**
 * Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Emily)
