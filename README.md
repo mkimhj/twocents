@@ -49,6 +49,7 @@ Todo List
 * Figure out what to put in the "How it works" section.
 * ~~Connect twocentsdonations@gmail.com with info@twocentsaday.com~~
 * ~~Create an email list for everyone who signs up~~
+* Integrate google analytics
 
 **Style**
 * Style and make the Donation page view to look better.
