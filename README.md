@@ -10,6 +10,8 @@ Less CSS: http://lesscss.org
 
 Sendgrid: https://sendgrid.com
 
+IFTTT: http://ifttt.com
+
 APIs: Stripe, Youtube
 
 **To run locally:**
