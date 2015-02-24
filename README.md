@@ -15,9 +15,8 @@ APIs: Stripe, Youtube
 **To run locally:**
 meteor --settings config/settings.json
 
-**To deploy:** (Haven't looked into deploying with a settings.json file yet)
-
-meteor deploy twocentsaday.com & meteor deploy www.twocentsaday.com
+**To deploy:** 
+meteor deploy http://www.twocentsaday.com --settings config/settings.json && meteor deploy http://twocentsaday.com --settings config/settings.json
 
 `meteor list` will show all packages used, remove `autopublish` and `aldeed:console-me` for deployment!
 
