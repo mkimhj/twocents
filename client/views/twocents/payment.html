@@ -16,8 +16,8 @@
 			        <label class="btn-close" for="modal-one" aria-hidden="true">× </label>
 			      </div>
 			      <div class="modal-body">
-					<div class="loader {{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"></div>
 
+ 					<div class="{{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up!</p></div>
 					<!-- TODO STYLE THIS SHIT AND CLOSE THE WINDOW -->
 					<div class="{{#if success}}show{{else}}hide{{/if}}">Success! Thanks, your donations will help save the world.</div>
 					<form id='donation-form' class="{{#if submitted}}hide{{else}}show{{/if}}">

@@ -81,9 +81,11 @@
 .modal-body p {
   margin: 0;
 }
-.modal-header,
-.modal-footer {
+.modal-header {
   padding: 20px 20px;
+}
+.modal-footer {
+  padding: 20px 20px 0px 20px;
 }
 .modal-header {
   border-bottom: #eaeaea solid 1px;

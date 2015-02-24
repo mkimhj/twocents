@@ -85,7 +85,7 @@ function stripeResponseHandler(status, response) {
     console.log(response.error);
   } else {
     //Create a customer on the server side
-    Meteor.call('createCustomer', response.id, $('input.full-name').val(), $('#emailInput').val(), response.created, function(err, response){
+    Meteor.call('createCustomer', response.id, $('input.full-name').val(), $('#emailInput').val(), $('#commentInput').val(), response.created, function(err, response){
       if(err) {
         Session.set('serverDataResponse', "Error:" + err.reason);
         return;
