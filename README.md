@@ -52,9 +52,10 @@ Todo List
 * ~~Integrate google analytics~~
 * ~~Compress background and pictures of us into smaller jpegs (takes too long to load on server)~~
 * Create an HTML Email template
-* Figure out what to put in the "How it works" section.
-* Unsubscribe
-* Fix cutoff form
+* Skeleton of how it works section (Quinn)
+* Unsubscribe option? 
+* Fix cutoff form (Maruchi)
+* Paypal integration (Maruchi)
 
 
 **Style**
@@ -69,8 +70,9 @@ Todo List
 
 **Logistics**
 * Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Emily)
-* Get a corporate / nonprofit bank account to connect our donations with. (Shyam)
-* Look for nonprofit funding (Freeventures, YC, etc.)
+* Bump up form reach (Shyam)
+* Meet with Global Brigades (Everyone)
+* Look for nonprofit accelerators (Emily)
 
 Server Side Debugging
 ========
