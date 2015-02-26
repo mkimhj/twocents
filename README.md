@@ -53,6 +53,8 @@ Todo List
 * ~~Compress background and pictures of us into smaller jpegs (takes too long to load on server)~~
 * Create an HTML Email template
 * Figure out what to put in the "How it works" section.
+* Unsubscribe
+* Fix cutoff form
 
 
 **Style**
