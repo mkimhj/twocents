@@ -54,7 +54,7 @@ Todo List
 * Create an HTML Email template
 * Skeleton of how it works section (Quinn)
 * Unsubscribe option? 
-* Fix cutoff form (Maruchi)
+* ~~Fix cutoff form (Maruchi)~~
 * Paypal integration (Maruchi)
 
 
