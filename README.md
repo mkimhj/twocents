@@ -55,7 +55,8 @@ Todo List
 * Skeleton of how it works section (Quinn)
 * Unsubscribe option? 
 * ~~Fix cutoff form (Maruchi)~~
-* Paypal integration (Maruchi)
+* ~~Paypal integration (Maruchi)~~
+* Handle all the paypal edge cases like Stripe, send email validation, check existence, etc.
 
 
 **Style**
