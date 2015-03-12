@@ -1,11 +1,10 @@
-
 Stripe.setPublishableKey(Meteor.settings.public.STRIPE_TEST_PUBLIC_KEY);
 
 //Session variables for form CSS
 Session.set("submitted", false);
 Session.set("success", false);
 
-Template.payment.helpers({
+Template.stripePayment.helpers({
   submitted: function() {
     return Session.get("submitted");
   },
@@ -15,14 +14,13 @@ Template.payment.helpers({
 });
 
 //Format credit card boxes
-Template.payment.rendered = function () {
+Template.stripePayment.rendered = function () {
   $('input.cc-num').payment('formatCardNumber');
   $('input.cc-exp').payment('formatCardExpiry');
   $('input.cc-cvc').payment('formatCardCVC');
 };
 
-//Handle Payment Form events (TODO: Send the comment text to an email)
-Template.payment.events({
+Template.stripePayment.events({
   'submit #donation-form': function(event) {
     //Prevent default form submission.
     event.preventDefault();

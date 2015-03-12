@@ -1,12 +1,23 @@
 Users = new Mongo.Collection("users");
+var gateway;
 
 // SERVER CODE
 if (Meteor.isServer) {
   //Code that runs on startup.
   Meteor.startup(function () {
-    //console.logs sent to client side (DISABLE FOR DEPLOYMENT)
-    ConsoleMe.enabled = true;
+    // Braintree Setup
+    var braintree = Meteor.npmRequire('braintree');
+    gateway = braintree.connect({
+      environment: braintree.Environment.Sandbox,
+      publicKey: Meteor.settings.BT_PUBLIC_KEY,
+      privateKey: Meteor.settings.BT_PRIVATE_KEY,
+      merchantId: Meteor.settings.BT_MERCHANT_ID
+    });
+
+    // Stripe Setup
     Stripe = StripeAPI(Meteor.settings.STRIPE_TEST_SECRET_KEY);
+
+    // Sendgrid Setup
     process.env.MAIL_URL = 'smtp://mkim-hj:m1h1kim1@smtp.sendgrid.net:587';
   });
 
@@ -29,7 +40,6 @@ if (Meteor.isServer) {
           return err;
         });
 
-        //Insert a new user into the MongoDB (TODO: send a confirmation email)
         Users.insert({
           stripeToken: token,
           name: name,
@@ -43,10 +53,10 @@ if (Meteor.isServer) {
 
         //confirmation email
         Email.send({
-          from: "info@twocentsaday.com",
+          from: "The Two Cents Team <info@twocentsaday.com>",
           to: address,
-          subject: "Confirmation Test",
-          text: "Test Text"
+          subject: "Two Cents Subscription Confirmation",
+          text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
         });
 
         console.log("sent confirmation");
@@ -69,6 +79,50 @@ if (Meteor.isServer) {
       } else {
         return false;
       }
+    },
+
+    getPaypalClientToken: function (clientId) {
+      var generateToken = Meteor.wrapAsync(gateway.clientToken.generate, gateway.clientToken);
+      var options = {};
+
+      if (clientId) {
+        options.clientId = clientId;
+      }
+
+      var response = generateToken(options);
+
+      return response.clientToken;
+    },
+
+    createPaypalCustomer: function (address, paymentNonce) {
+      var createCustomer = Meteor.wrapAsync(gateway.customer.create, gateway.customer);
+      var findCustomer = Meteor.wrapAsync(gateway.customer.find, gateway.customer);
+      var newSubscription = Meteor.wrapAsync(gateway.subscription.create, gateway.subscription);
+
+      createCustomer({
+        firstName: address,
+        email: address,
+        paymentMethodNonce: paymentNonce
+      }, function(err, result) {
+        if (result.success) {
+          findCustomer(result.customer.id, function(err2, customer) {
+            console.log(customer);
+            if (err2) {
+              throw new Meteor.error("customer doesn't exist", "The customer was failed to be created");
+            } else {
+              var subscriptionRequest = {
+                paymentMethodToken: customer.paypalAccounts[0].token,
+                planId : "b7tb"
+              };       
+              newSubscription(subscriptionRequest, function(err3, result) {
+                console.log("Subscription Status " + result.subscription.status);
+              });
+            }
+          })
+        } else {
+          throw new Meteor.error("500", "[ERROR] Paypal unsuccessful: " + err);
+        }
+      })
     }
   });
 }

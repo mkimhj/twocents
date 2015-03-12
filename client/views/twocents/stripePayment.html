@@ -1,0 +1,63 @@
+<template name="stripePayment">
+	<!-- Stripe -->
+	<center><label class="button button-primary" for="modal-one">Credit Card</label></center>
+
+	<div class="modal">
+	  <input class="modal-open" id="modal-one" type="checkbox" hidden>
+	  <div class="modal-wrap" aria-hidden="true" role="dialog">
+	    <label class="modal-overlay" for="modal-one"><div class="brandingLogoView"></div></label>
+
+	    <div class="modal-dialog">
+	      <div class="modal-header">
+	        <h2>Two Cents Donation ($1 every 50 days)</h2>
+	        <label class="btn-close" for="modal-one" aria-hidden="true">× </label>
+	      </div>
+	      <div class="modal-body">
+			<div class="{{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up!</p></div>
+			<div class="{{#if success}}show{{else}}hide{{/if}}">Success! Thanks, your donations will help save the world.</div>
+			<form id='donation-form' class="{{#if submitted}}hide{{else}}show{{/if}}">
+			  <div class="row">
+			    <div class="six columns">
+			      <label for="nameInput">Your name</label>
+			      <input class="u-full-width full-name paymentInput" type="text" placeholder="Name" id="nameInput" required>
+			    </div>
+			    <div class="six columns">
+			      <label for="emailInput">Your email</label>
+			      <input class="u-full-width e-mail paymentInput" type="email" placeholder="Email" id="emailInput" required>
+			    </div>
+			  </div>
+			  <div class="row">
+			  	<div class="six columns">
+			  		<div class="cc-num__wrap">
+			  		<label for="cardInput">Your credit or debit card</label>
+				  		<input class="u-full-width cc-num paymentInput" type="text" placeholder="Card number" id="cardInput" autocomplete="cc-number" data-stripe="number" required>
+				  	    <span class="card" aria-hidden="true"></span>
+			  		</div>
+			  	</div>
+
+			  	<div class="three columns">
+			  		<label for="expirationInput">Expiration date</label>
+			  		<input class="u-full-width cc-exp paymentInput" type="text" placeholder="MM/YYYY" id="expirationInput" autocomplete="cc-exp" required>
+			  	</div>
+
+			  	<input type="text" id="stripeMonth" data-stripe="exp-month" hidden>
+			 	<input type="text" id="stripeYear" data-stripe="exp-year" hidden>
+
+			  	<div class="three columns">
+			  		<label for="cvcInput">Security code</label>
+			  		<input class="u-full-width cc-cvc paymentInput" type="text" placeholder="CVC" id="cvcInput" autocomplete="off" data-stripe="cvc" required>
+			  	</div>
+			  </div>
+
+			  <label for="commentInput">Feel free to leave a comment!</label>
+			  <textarea class="u-full-width" placeholder="Message" id="commentInput"></textarea>
+			  <div class="modal-footer">
+			  	<input class="button-primary" id="submit-button" type="submit" value="start donating">
+			  </div>
+			</form>
+
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</template>

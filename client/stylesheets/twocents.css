@@ -35,6 +35,20 @@ html,
   display: none;
 }
 
+#modal-two {
+  display: none;
+}
+
+.brandingLogoView{
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  background-image: url("img/powered-by-stripe.png");
+  background-size: 100% 100%;
+  width: 123px;
+  height: 30px;
+}
+
 h1,
 h2,
 h3,
@@ -63,7 +77,6 @@ img {
     background: #000000;
 }
 
-
 .logo {
   position: relative;
   top: 50%;
@@ -85,7 +98,7 @@ img {
 }
 
 .founder-row {
-  width: 100%
+  width: 100%;
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;

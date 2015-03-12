@@ -1,0 +1,22 @@
+<template name="paypal">
+	<div id="paypal-button"></div>
+
+	<script>
+			Meteor.call('getPaypalClientToken', function (err, clientToken) {
+				if (err) {
+					console.log('There was an error in retrieving the token:', err);
+					return;
+				}
+
+		        braintree.setup(clientToken, "paypal", {
+				    container: "paypal-button",
+				    singleUse: false,
+				    onPaymentMethodReceived: function (obj) {
+				    	console.log(obj);
+				    	Session.set("paypal-nonce", obj.nonce);
+				    	Session.set("paypal-email", obj.details.email);
+				    }
+			  	});
+		    });
+	</script>
+</template>

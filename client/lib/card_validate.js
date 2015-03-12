@@ -6,11 +6,11 @@ function validateEmail(email) {
 }
 
 $(function() {
-  
   //Function for highlighting boxes green upon completion
   var validateDetails = function() {
     // set variables for the expiry date validation, cvc validation and expiry date 'splitter'
     var name = $('input.full-name').val();
+    var paypalName = $('input.full-paypal-name').val();
     var validEmail = validateEmail($('input.e-mail').val());
     var expiry = $('.cc-exp').payment('cardExpiryVal');
     var validateExpiry = $.payment.validateCardExpiry(expiry["month"], expiry["year"]);
@@ -20,6 +20,11 @@ $(function() {
       $('.full-name').addClass('identified');
     } else {
       $('.full-name').removeClass('identified');
+    }
+    if (paypalName != null && paypalName != "") {
+      $('.full-paypal-name').addClass('identified');
+    } else {
+      $('.full-paypal-name').removeClass('identified');
     }
     if (validEmail) {
       $('.e-mail').addClass('identified');

@@ -1,0 +1,40 @@
+<template name="paypalPayment">
+	<center><label class="button button-primary" for="modal-two">Paypal</label></center>
+	<div class="modal">
+	  <input class="modal-open" id="modal-two" type="checkbox" hidden>
+	  <div class="modal-wrap" aria-hidden="true" role="dialog">
+	    <label class="modal-overlay" for="modal-two"></label>
+	    <div class="modal-dialog">
+	      <div class="modal-header">
+	        <h2>Two Cents Donation ($1 every 50 days)</h2>
+	        <label class="btn-close" for="modal-two" aria-hidden="true">× </label>
+	      </div>
+	      <div class="modal-body">
+				<div class="{{#if paypalSuccess}}hide{{else}}{{#if paypalSubmitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up!</p></div>
+			<div class="{{#if paypalSuccess}}show{{else}}hide{{/if}}">Success! Thanks, your donations will help save the world.</div>
+			<form id='paypal-form' class="{{#if paypalSubmitted}}hide{{else}}show{{/if}}">
+			  <div class="row">
+			    <div class="twelve columns">
+			      <label for="nameInput">Your name</label>
+			      <input class="u-full-width full-paypal-name paymentInput" type="text" placeholder="Name" id="namePaypalInput" required>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="twelve columns">
+			      <label for="paypalInput">Link your Paypal</label>
+			      <!-- Paypal Button in paypal.html -->
+	    		  {{> paypal}}
+			    </div>
+			  </div>
+			  <br>
+			  <label for="commentInput">Feel free to leave a comment!</label>
+			  <textarea class="u-full-width" placeholder="Message" id="commentPaypalInput"></textarea>
+			  <div class="modal-footer">
+			  	<input class="button-primary" id="submit-paypal-button" type="submit" value="start donating">
+			  </div>
+			</form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</template>
