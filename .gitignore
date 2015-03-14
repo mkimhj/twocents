@@ -1,4 +1,4 @@
-# Compiled source #
+Compiled source #
 ###################
 *.com
 *.class
@@ -35,3 +35,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# API Credentials #
+###################
+config/settings.json
