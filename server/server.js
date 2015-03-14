@@ -18,7 +18,7 @@ if (Meteor.isServer) {
     Stripe = StripeAPI(Meteor.settings.STRIPE_TEST_SECRET_KEY);
 
     // Sendgrid Setup
-    process.env.MAIL_URL = 'smtp://mkim-hj:m1h1kim1@smtp.sendgrid.net:587';
+    process.env.MAIL_URL = SENDGRID_SMTP_URL;
   });
 
   //Client handler for creating customers. Check if email is already signed up.
