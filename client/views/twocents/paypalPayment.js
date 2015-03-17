@@ -28,22 +28,19 @@ Template.paypalPayment.events({
     Meteor.call('checkEmail', email, function(err, emailExists) {
     	if (err) {
     		console.log(err);
-    		return;
     	} else {
     		if (emailExists && !sandboxMode) {
-        		alert("You've already signed up!");
+        	alert("You've already signed up!");
     		} else if (name == "" || name == null) {
     			alert("Please check your name!");
     		} else {
 	    		Session.set("paypalSubmitted", true);
 	    		Session.set("paypalSuccess", false);
-	    		console.log("creating paypal customer");
-		    	Meteor.call('createPaypalCustomer', email, nonce, function(err, response) {
+		    	Meteor.call('createPaypalCustomer', name, email, $('#commentPaypalInput').val(), nonce, function(err, response) {
 		    		if (err) {
 		    			console.log("Paypal failed due to " + err);
 		    		} else {
-		    			console.log("Successfully created paypal customer");
-		    		    Session.set("paypalSuccess", true);
+		    		  Session.set("paypalSuccess", true);
 		    		}
 		    	});
 		    }

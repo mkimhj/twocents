@@ -76,8 +76,6 @@ Template.stripePayment.events({
 
 //Stripe callback function
 function stripeResponseHandler(status, response) {
-  console.log("Response from Stripe!");
-  console.log(response);
   if (response.error) {
     //Log any errors, if any. TODO: Handle the errors.
     console.log(response.error);

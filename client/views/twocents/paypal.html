@@ -12,7 +12,6 @@
 				    container: "paypal-button",
 				    singleUse: false,
 				    onPaymentMethodReceived: function (obj) {
-				    	console.log(obj);
 				    	Session.set("paypal-nonce", obj.nonce);
 				    	Session.set("paypal-email", obj.details.email);
 				    }
