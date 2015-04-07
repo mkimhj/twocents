@@ -72,9 +72,9 @@ Todo List
 **Logistics**
 * Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Shyam)
 * Bump up form reach (Shyam)
-* Meet with Global Brigades (Everyone)
+* ~~Meet with Global Brigades (Everyone)~~
 * Look for nonprofit accelerators (Emily)
-* Finish bank account logistics (Emily)
+* ~~Finish bank account logistics (Emily)~~
 * File for nonprofit (Emily)
 
 Server Side Debugging
