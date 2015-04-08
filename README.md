@@ -12,7 +12,7 @@ Sendgrid: https://sendgrid.com
 
 IFTTT: http://ifttt.com
 
-APIs: Stripe, Youtube
+APIs: Stripe, Youtube, Paypal, Sendgrid, IFTTT
 
 **To run locally:**
 meteor --settings config/settings.json
@@ -20,7 +20,7 @@ meteor --settings config/settings.json
 **To deploy:** 
 meteor deploy http://www.twocentsaday.com --settings config/settings.json && meteor deploy http://twocentsaday.com --settings config/settings.json
 
-`meteor list` will show all packages used, remove `autopublish` and `aldeed:console-me` for deployment!
+`meteor list` will show all packages used.
 
 Directory Hierarchy
 ========
@@ -79,7 +79,3 @@ Todo List
 * ~~Fix cutoff form (Maruchi)~~
 * ~~Paypal integration (Maruchi)~~
 * ~~Handle all the paypal edge cases like Stripe, send email validation, check existence, etc.~~
-
-**Server Side Debugging**
-========
-In line 8 of Meteor.startup you will see `ConsoleMe.enabled = true;`, this opens a subscription for the client to receive console logs from the Server, if you want to enable listening on the client side type `ConsoleMe.subscribe()` in the browser console. Make sure to enter this every time you refresh the page. Also, DISABLE THIS FOR DEPLOYMENT.
