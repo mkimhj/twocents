@@ -20,6 +20,9 @@ meteor --settings config/settings.json
 **To deploy:** 
 meteor deploy http://www.twocentsaday.com --settings config/live-settings.json && meteor deploy http://twocentsaday.com --settings config/live-settings.json
 
+**SSL Authentication**
+Must refresh every 30 days with StartSSL!
+
 `meteor list` will show all packages used.
 
 Directory Hierarchy
