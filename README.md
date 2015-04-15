@@ -18,7 +18,7 @@ APIs: Stripe, Youtube, Paypal, Sendgrid, IFTTT
 meteor --settings config/settings.json
 
 **To deploy:** 
-meteor deploy http://www.twocentsaday.com --settings config/settings.json && meteor deploy http://twocentsaday.com --settings config/settings.json
+meteor deploy http://www.twocentsaday.com --settings config/live-settings.json && meteor deploy http://twocentsaday.com --settings config/live-settings.json
 
 `meteor list` will show all packages used.
 
