@@ -51,7 +51,7 @@ Todo List
 * Brighter, more inviting background for splash page
 
 **Outreach**
-* Find a nonprofit, maybe two, to connect with and start marketing once site is up and running. (Shyam)
+* Find many nonprofits to connect with and start marketing once site is up and running. (Shyam)
 * Look for nonprofit accelerators (Emily)
 * File for nonprofit (Emily)
 
