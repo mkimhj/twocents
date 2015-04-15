@@ -5,7 +5,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 jquery
 adrianliaw:youtube-iframe-api
 grove:stripe.js
@@ -14,9 +13,10 @@ grove:stripe-npm
 skeleton:skeleton
 less
 patrickocoffeyo:meteor-jquery-payment
-aldeed:console-me
 email
 meteorhacks:npm
 
 
 npm-container
+aldeed:console-me
+cmather:handlebars-server

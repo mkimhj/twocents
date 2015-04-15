@@ -27,7 +27,9 @@ Meteor.methods({
       plan: "one",
       email: address
     }, function(err, customer) {
-      throw new Meteor.error(400, "Error creating Stripe customer");
+        if (err) {
+          throw new Meteor.error(400, err);
+        }
     });
 
     // Insert user into database to ensure no duplicates exist in the future.
@@ -110,10 +112,11 @@ Meteor.methods({
     console.log("Sending confirmation email...");
     //Confirmation Email
     Email.send({
-      from: "The Two Cents Team <info@twocentsaday.com>",
+      from: "The Two Cents Team <hello@twocentsaday.com>",
       to: email,
       subject: "Two Cents Subscription Confirmation",
-      text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
+      html: Handlebars.templates['confirmation']({ user: name })
+      // text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
     });
 
     console.log("Saving to IFTTT");
@@ -122,7 +125,7 @@ Meteor.methods({
       from: "info@twocentsaday.com",
       to: "trigger@recipe.ifttt.com",
       subject: String(email),
-      text: String(comment)
+      text: String(comment),
     });
   }
 });
