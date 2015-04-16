@@ -14,6 +14,10 @@ IFTTT: http://ifttt.com
 
 APIs: Stripe, Youtube, Paypal, Sendgrid, IFTTT, Iron Router
 
+MongoDB Hosting: www.mongolab.com
+
+Web Server Hosting: www.modulus.io
+
 **To run locally:**
 meteor --settings config/test-settings.json
 
