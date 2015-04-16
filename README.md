@@ -12,13 +12,14 @@ Sendgrid: https://sendgrid.com
 
 IFTTT: http://ifttt.com
 
-APIs: Stripe, Youtube, Paypal, Sendgrid, IFTTT
+APIs: Stripe, Youtube, Paypal, Sendgrid, IFTTT, Iron Router
 
 **To run locally:**
 meteor --settings config/test-settings.json
 
-**To deploy:** 
-meteor deploy http://www.twocentsaday.com --settings config/live-settings.json && meteor deploy http://twocentsaday.com --settings config/live-settings.json
+**To deploy:**
+npm install -g modulus (first time to install CLI)
+modulus deploy "Two Cents"
 
 **SSL Authentication**
 Must refresh every 30 days with StartSSL!
