@@ -15,7 +15,7 @@ IFTTT: http://ifttt.com
 APIs: Stripe, Youtube, Paypal, Sendgrid, IFTTT
 
 **To run locally:**
-meteor --settings config/settings.json
+meteor --settings config/test-settings.json
 
 **To deploy:** 
 meteor deploy http://www.twocentsaday.com --settings config/live-settings.json && meteor deploy http://twocentsaday.com --settings config/live-settings.json
