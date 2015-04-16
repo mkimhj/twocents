@@ -1,4 +1,46 @@
-Stripe.setPublishableKey(Meteor.settings.public.STRIPE_TEST_PUBLIC_KEY);
+Stripe.setPublishableKey(Meteor.settings.public.STRIPE_PUBLIC_KEY);
+
+var sandboxMode = Meteor.settings.public.SANDBOX_MODE;
+
+function validateEmail(email) { 
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function validateDetails() {
+  // set variables for the expiry date validation, cvc validation and expiry date 'splitter'
+  var name = $('input.full-name').val();
+  var validEmail = validateEmail($('input.e-mail').val());
+  var expiry = $('.cc-exp').payment('cardExpiryVal');
+  var validateExpiry = $.payment.validateCardExpiry(expiry["month"], expiry["year"]);
+  var validateCVC = $.payment.validateCardCVC($('.cc-cvc').val());
+  // if statement on whether the card’s expiry is valid or not
+  if (name != null && name != "") {
+    $('.full-name').addClass('identified');
+  } else {
+    $('.full-name').removeClass('identified');
+  }
+  if (validEmail) {
+    $('.e-mail').addClass('identified');
+  } else {
+    $('.e-mail').removeClass('identified');
+  }
+  if (validateExpiry) {
+    // if the expiry is valid add the identified class
+    $('.cc-exp').addClass('identified');
+  } else {
+    // remove again if the expiry becomes invalid
+    $('.cc-exp').removeClass('identified');
+  }
+  // if statement on whether the card’s cvc is valid or not
+  if (validateCVC) {
+    // if the cvc is valid add the identified class
+    $('.cc-cvc').addClass('identified');
+  } else {
+    // remove again if the cvc becomes invalid
+    $('.cc-cvc').removeClass('identified');
+  }
+}
 
 //Session variables for form CSS
 Session.set("submitted", false);
@@ -52,7 +94,7 @@ Template.stripePayment.events({
           alert("Please fill out your email address!");
         } else if (name == "" || name == null) {
           alert("Please check your name!");
-        } else if (emailExists) {
+        } else if (emailExists && !sandboxMode) {
           alert("You've already signed up!");
         } else {
           //Populate hidden month and year folds for Stripe API
@@ -71,6 +113,10 @@ Template.stripePayment.events({
         }
       }
     });
+  },
+
+  'click .paymentInput, blur .paymentInput, keypress .paymentInput': function(event) {
+    validateDetails();
   }
 });
 

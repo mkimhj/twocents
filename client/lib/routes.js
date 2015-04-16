@@ -6,6 +6,7 @@ Router.route('/', function() {
 
 Router.route('/about', function () {
 	this.render('team');
+	window.scrollTo(0, 0);
 });
 
 Router.configure({

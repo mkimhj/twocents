@@ -84,6 +84,10 @@ img {
     background: #000000;
 }
 
+.white {
+  background: #FFFFFF;
+}
+
 .logo {
   position: relative;
   top: 50%;

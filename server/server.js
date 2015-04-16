@@ -13,7 +13,7 @@ Meteor.startup(function () {
   });
 
   // Stripe Setup
-  Stripe = StripeAPI(Meteor.settings.STRIPE_TEST_SECRET_KEY);
+  Stripe = StripeAPI(Meteor.settings.STRIPE_SECRET_KEY);
 
   // Sendgrid Setup
   process.env.MAIL_URL = Meteor.settings.SENDGRID_SMTP_URL;
@@ -122,11 +122,13 @@ Meteor.methods({
     console.log("Saving to IFTTT");
     //IFTTT endpoint
     Email.send({
-      from: "info@twocentsaday.com",
+      from: "twocentsdonations@gmail.com",
       to: "trigger@recipe.ifttt.com",
-      subject: String(email),
+      subject: String(Meteor.settings.IFTTT_ENDPOINT).concat(String(email)),
       text: String(comment),
     });
+
+    console.log(String(Meteor.settings.IFTTT_ENDPOINT).concat(String(email)));
   }
 });
 
