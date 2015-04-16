@@ -28,7 +28,14 @@ Meteor.methods({
       email: address
     }, function(err, customer) {
         if (err) {
-          throw new Meteor.error(400, err);
+          console.log("Thrown Error: " + err);
+          Email.send({
+            from: "error@twocentsaday.com",
+            to: "maruchi.kim@gmail.com",
+            subject: "Error on Server ",
+            text: String(err),
+          });
+          break;
         }
     });
 
@@ -102,14 +109,21 @@ Meteor.methods({
             Meteor.call("sendConfirmationEmail", customer.firstName, customer.email, comment);
           })
         } else {
-          throw new Meteor.error(500, "[ERROR] Paypal unsuccessful: " + err);
+            console.log("Thrown Error: " + err);
+            Email.send({
+              from: "error@twocentsaday.com",
+              to: "maruchi.kim@gmail.com",
+              subject: "Error on Server ",
+              text: String(err),
+            });
+            break;
         }
       })
   },
 
   // Method to send confirmation emails
   sendConfirmationEmail: function(name, email, comment) {
-    console.log("Sending confirmation email...");
+    console.log("Sending confirmation email to " + String(name));
     //Confirmation Email
     Email.send({
       from: "The Two Cents Team <hello@twocentsaday.com>",
@@ -119,7 +133,7 @@ Meteor.methods({
       // text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
     });
 
-    console.log("Saving to IFTTT");
+    console.log("Saving " + name + " to IFTTT");
     //IFTTT endpoint
     Email.send({
       from: "twocentsdonations@gmail.com",
