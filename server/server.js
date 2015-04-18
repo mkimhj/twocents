@@ -82,6 +82,7 @@ Meteor.methods({
           findCustomer(result.customer.id, function(err, customer) {
             // Create a subscriptionRequest object
             var subscriptionRequest = {
+              id: customer.paypalAccounts[0].token,
               paymentMethodToken: customer.paypalAccounts[0].token,
               planId : "b7tb"
             };       
@@ -91,7 +92,7 @@ Meteor.methods({
 
             // Insert user into database to ensure no duplicates exist in the future.
             Users.insert({
-              paypalToken: subscriptionRequest.token,
+              paypalToken: subscriptionRequest.id,
               name: customer.firstName,
               email: customer.email,
               createdAt: customer.createdAt,
