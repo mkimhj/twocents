@@ -7,7 +7,6 @@
 					console.log('There was an error in retrieving the token:', err);
 					return;
 				}
-
 		        braintree.setup(clientToken, "paypal", {
 				    container: "paypal-button",
 				    singleUse: false,

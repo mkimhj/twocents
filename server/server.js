@@ -13,7 +13,7 @@ Meteor.startup(function () {
   });
 
   // Stripe Setup
-  Stripe = StripeAPI(Meteor.settings.STRIPE_TEST_SECRET_KEY);
+  Stripe = StripeAPI(Meteor.settings.STRIPE_SECRET_KEY);
 
   // Sendgrid Setup
   process.env.MAIL_URL = Meteor.settings.SENDGRID_SMTP_URL;
@@ -27,7 +27,16 @@ Meteor.methods({
       plan: "one",
       email: address
     }, function(err, customer) {
-      throw new Meteor.error(400, "Error creating Stripe customer");
+        if (err) {
+          console.log("Thrown Error: " + err);
+          Email.send({
+            from: "error@twocentsaday.com",
+            to: "maruchi.kim@gmail.com",
+            subject: "Error on Server ",
+            text: String(err),
+          });
+          break;
+        }
     });
 
     // Insert user into database to ensure no duplicates exist in the future.
@@ -101,30 +110,40 @@ Meteor.methods({
             Meteor.call("sendConfirmationEmail", customer.firstName, customer.email, comment);
           })
         } else {
-          throw new Meteor.error(500, "[ERROR] Paypal unsuccessful: " + err);
+            console.log("Thrown Error: " + err);
+            Email.send({
+              from: "error@twocentsaday.com",
+              to: "maruchi.kim@gmail.com",
+              subject: "Error on Server ",
+              text: String(err),
+            });
+            break;
         }
       })
   },
 
   // Method to send confirmation emails
   sendConfirmationEmail: function(name, email, comment) {
-    console.log("Sending confirmation email...");
+    console.log("Sending confirmation email to " + String(name));
     //Confirmation Email
     Email.send({
-      from: "The Two Cents Team <info@twocentsaday.com>",
+      from: "The Two Cents Team <hello@twocentsaday.com>",
       to: email,
       subject: "Two Cents Subscription Confirmation",
-      text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
+      html: Handlebars.templates['confirmation']({ user: name })
+      // text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
     });
 
-    console.log("Saving to IFTTT");
+    console.log("Saving " + name + " to IFTTT");
     //IFTTT endpoint
     Email.send({
-      from: "info@twocentsaday.com",
+      from: "twocentsdonations@gmail.com",
       to: "trigger@recipe.ifttt.com",
-      subject: String(email),
-      text: String(comment)
+      subject: String(Meteor.settings.IFTTT_ENDPOINT).concat(String(email)),
+      text: String(comment),
     });
+
+    console.log(String(Meteor.settings.IFTTT_ENDPOINT).concat(String(email)));
   }
 });
 

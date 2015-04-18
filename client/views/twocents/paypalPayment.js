@@ -1,7 +1,15 @@
-//Session variables for form CSS
-
 // SANDBOXMODE
-var sandboxMode = true;
+var sandboxMode = Meteor.settings.public.SANDBOX_MODE;
+
+function validatePaypalDetails() {
+  // set variables for the expiry date validation, cvc validation and expiry date 'splitter'
+  var paypalName = $('input.full-paypal-name').val();
+  if (paypalName != null && paypalName != "") {
+    $('.full-paypal-name').addClass('identified');
+  } else {
+    $('.full-paypal-name').removeClass('identified');
+  }
+}
 
 Session.set("paypalSubmitted", false);
 Session.set("paypalSuccess", false);
@@ -46,5 +54,9 @@ Template.paypalPayment.events({
 		    }
     	}
     });
+  },
+
+  'click .paymentInput, keypress .paymentInput': function(event) {
+    validatePaypalDetails();
   }
 });

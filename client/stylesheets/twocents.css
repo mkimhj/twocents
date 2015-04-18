@@ -26,6 +26,13 @@ html,
 	height: 100%;
 }
 
+.row-container {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #team {
   width: 100%;
   min-height: 100%;
@@ -75,6 +82,10 @@ img {
 
 .black {
     background: #000000;
+}
+
+.white {
+  background: #FFFFFF;
 }
 
 .logo {
@@ -187,7 +198,7 @@ iframe {
 }
 
 #navbar {
-  max-width: 90%;
+  max-width: 85%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -241,3 +252,24 @@ iframe {
       text-decoration: none; }
       #navigation li.nav-item a:hover {
         color: #39BAFF; }
+
+footer {
+  background: #178FE1;
+  color: white;
+  position: relative;
+  padding: 27px 0 22px !important; }
+  footer li {
+    display: inline-block;
+    margin: 0; }
+    footer li a {
+      display: block;
+      padding: 20px;
+      line-height: 20px;
+      color: white; 
+      font: normal 14px "Proxima Nova", sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none; }
+      footer li a:hover {
+        color: #39BAFF;
+      }
