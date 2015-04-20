@@ -14,23 +14,24 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-/*  font: inherit;
+/*  font-size: 100%;
+*//*  font: inherit;
 */  vertical-align: baseline; }
 
-body,
 html,
+body,
 #splash,
 #donate {
 	width: 100%;
 	height: 100%;
 }
 
-.row-container {
-  width: 100%;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+.top-buffer {
+  padding-top: 100px;
+}
+
+.bottom-buffer {
+  padding-bottom: 20px;
 }
 
 #team {
@@ -209,7 +210,7 @@ iframe {
 
 #navigation {
   z-index: 1;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   opacity: 1.0;
   position: fixed;
   height: 80px;
@@ -229,14 +230,14 @@ iframe {
       display: block;
       padding: 20px;
       line-height: 20px;
-      color: white; }
+      color: black; }
     #navigation li.logo-nav {
       text-transform: uppercase;
       font-size: 20px;
       font-weight: bold;
       text-decoration: none; }
     #navigation li.logo-nav a {
-      background: url("img/two-cents-2.png") center no-repeat;
+      background: url("img/two-cents-black.png") center no-repeat;
       background-size: contain;
       text-decoration: none; 
       width: 150px;
@@ -254,10 +255,16 @@ iframe {
         color: #39BAFF; }
 
 footer {
-  background: #178FE1;
-  color: white;
+  background-image:
+    linear-gradient(
+      to top right, 
+      #2D78D8, #5EA7D1
+    );
+/*  background: #f5f5f5;
+*/  color: #245dc1;
   position: relative;
-  padding: 27px 0 22px !important; }
+  width: 100%;
+  padding: 20px 0 20px 0px; }
   footer li {
     display: inline-block;
     margin: 0; }
@@ -265,10 +272,9 @@ footer {
       display: block;
       padding: 20px;
       line-height: 20px;
-      color: white; 
-      font: normal 14px "Proxima Nova", sans-serif;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      /*color: #245dc1; */
+      color: white;
+      letter-spacing: 0.03em;
       text-decoration: none; }
       footer li a:hover {
         color: #39BAFF;

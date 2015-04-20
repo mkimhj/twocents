@@ -9,6 +9,16 @@ Router.route('/about', function () {
 	window.scrollTo(0, 0);
 });
 
+Router.route('/privacy', function() {
+	this.render('privacy');
+	window.scrollTo(0,0);
+});
+
+Router.route('/contact', function() {
+	this.render('contact');
+	window.scrollTo(0,0);
+});
+
 Router.configure({
   layoutTemplate: 'ApplicationLayout'
 });

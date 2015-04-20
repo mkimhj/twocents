@@ -5,12 +5,25 @@ var gateway;
 Meteor.startup(function () {
   // Braintree Setup
   var braintree = Meteor.npmRequire('braintree');
-  gateway = braintree.connect({
-    environment: braintree.Environment.Sandbox,
-    publicKey: Meteor.settings.BT_PUBLIC_KEY,
-    privateKey: Meteor.settings.BT_PRIVATE_KEY,
-    merchantId: Meteor.settings.BT_MERCHANT_ID
-  });
+
+  if (Meteor.settings.public.SANDBOX_MODE) {
+    console.log("Braintree: Sandbox Mode");
+    gateway = braintree.connect({
+      environment: braintree.Environment.Sandbox,
+      publicKey: Meteor.settings.BT_PUBLIC_KEY,
+      privateKey: Meteor.settings.BT_PRIVATE_KEY,
+      merchantId: Meteor.settings.BT_MERCHANT_ID
+    });
+  } else {
+    console.log("Braintree: Production Mode");
+    gateway = braintree.connect({
+      environment: braintree.Environment.Production,
+      publicKey: Meteor.settings.BT_PUBLIC_KEY,
+      privateKey: Meteor.settings.BT_PRIVATE_KEY,
+      merchantId: Meteor.settings.BT_MERCHANT_ID
+    });
+  }
+
 
   // Stripe Setup
   Stripe = StripeAPI(Meteor.settings.STRIPE_SECRET_KEY);
@@ -22,6 +35,8 @@ Meteor.startup(function () {
 Meteor.methods({
   // Method to create a new Stripe subscriber
   createCustomer: function (token, name, address, comment, timestamp) {
+    var success = true;
+
     Stripe.customers.create({
       card: token,
       plan: "one",
@@ -35,20 +50,22 @@ Meteor.methods({
             subject: "Error on Server ",
             text: String(err),
           });
-          break;
+          success = false;
         }
     });
 
-    // Insert user into database to ensure no duplicates exist in the future.
-    Users.insert({
-      stripeToken: token,
-      name: name,
-      email: address,
-      createdAt: timestamp,
-    });
+    if (success) {
+      // Insert user into database to ensure no duplicates exist in the future.
+      Users.insert({
+        stripeToken: token,
+        name: name,
+        email: address,
+        createdAt: timestamp,
+      });
 
-    // Send confirmation email
-    Meteor.call("sendConfirmationEmail", name, address, comment);
+      // Send confirmation email
+      Meteor.call("sendConfirmationEmail", name, address, comment);
+    }
   },
 
   // Method to prevent duplicate users
@@ -116,7 +133,6 @@ Meteor.methods({
               subject: "Error on Server ",
               text: String(err),
             });
-            break;
         }
       })
   },
