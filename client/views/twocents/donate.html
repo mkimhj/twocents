@@ -1,17 +1,13 @@
 <template name="donate">
 	<article id="donate">
-		<div id="payment-content">
-			<h1 class="section-header"><center>Donate</center></h1>		
+			<!-- <h1 class="section-header"><center>Donate</center></h1>		 -->
+		<center>
+			<label class="button button-green" for="modal-one">Credit Card</label>
+			<label class="button button-green" for="modal-two">Paypal</label>
+		</center>
 
-			<center>
-				<label class="button button-primary" for="modal-one">Credit Card</label>
-				<label class="button button-primary" for="modal-two">Paypal</label>
-			</center>
+		{{> stripePayment}}
 
-			{{> stripePayment}}
-
-			{{> paypalPayment}}
-		</div>
+		{{> paypalPayment}}
 	</article>
-
 </template>
