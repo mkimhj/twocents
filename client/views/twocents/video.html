@@ -1,5 +1,25 @@
 <template name="video">		
-	<article id="splash" class="{{#if played}}black{{else}}wallpaper{{/if}}">
-		<div id="player"></div>
-	</article>
+	<div class="video-container">
+		<div class="title-container">
+			<div class="container">
+				<h1>Give two cents. Make a difference.</h1>
+				<br>
+				<h5>Pocket change donations for driving the next big social movement.</h5>
+				<br>
+				<label class="button button-primary" id="video-button">Watch Video</label>
+				<label class="button button-green" for="modal-one">Donate Now</label>
+			</div>
+		</div>
+
+		<!-- Overlay -->
+		<div class="filter"></div>
+
+		<!-- HTML5 Video -->
+		<video autoplay loop>
+            <source src="http://dfcb.github.io/BigVideo.js/vids/dock.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <!-- <source src="img/YOUR-VIDEO-NAME" type="video/mp4" /> -->
+        </video>
+
+        <div id="player"></div>
+	</div>
 </template>
