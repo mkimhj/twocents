@@ -27,9 +27,12 @@ onYouTubeIframeAPIReady = function () {
 //Load Youtube
 YT.load();
 
-//Functions that are accessible by the HTML
-Template.video.helpers({
-  played: function() {
-    return Session.get("played");
+
+Template.video.events({
+  'click #video-button': function(event){
+    console.log("test");
+    player.playVideo();
+    $('iframe#player').css("z-index", "1000");
   }
+
 });

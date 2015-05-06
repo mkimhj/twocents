@@ -1,0 +1,57 @@
+.video-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-container .title-container {
+  z-index: 100;
+  position: relative;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+.video-container .filter {
+  z-index: 10;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  left: 0; 
+  top: 0; 
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+iframe#player{
+  z-index: -1000;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-container video {
+    height: 300%; top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-container video {
+    width: 300%; left: -100%;
+  }
+}
+
+@supports (object-fit: cover) {
+  .video-container video {
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+}
