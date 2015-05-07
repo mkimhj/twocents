@@ -249,7 +249,7 @@ iframe {
 }
 
 #navigation {
-  z-index: 1;
+  z-index: 1000;
   background: rgba(255, 255, 255, 0.9);
   opacity: 1.0;
   position: fixed;
@@ -267,7 +267,7 @@ iframe {
     display: inline-block;
     margin: 0; }
     #navigation li a {
-      background: url("img/two-cents-black.png") center no-repeat;
+      background: url("img/two-cents-white.png") center no-repeat;
       display: block;
       padding: 20px;
       line-height: 20px;
