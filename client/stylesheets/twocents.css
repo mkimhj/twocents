@@ -319,3 +319,15 @@ footer {
       footer li a:hover {
         color: #39BAFF;
       }
+
+
+#fader {
+   position: fixed;
+   left: 0px; 
+   right: 0px; 
+   top: 0px; 
+   bottom: 0px; 
+   background-color: white;
+   z-index: 999999; /* Higher than anything else in the document */
+
+ }

@@ -1,23 +1,31 @@
 <template name="ApplicationLayout">
-	<nav class="hidden" id="navigation">
-      <ul id="navbar">
-        <li class="logo-nav"><a href="/"></a></li>
-        <li class="nav-item sign-up"><label class="button button-green hide" id="navbar-signup-button" for="modal-one">Sign Up</label></li>
-      </ul>
-    </nav>
+	<div style="display: block" id="fader">&nbsp;</div>
+		<nav class="hidden" id="navigation">
+	      <ul id="navbar">
+	        <li class="logo-nav"><a href="/"></a></li>
+	        <li class="nav-item sign-up"><label class="button button-green hide" id="navbar-signup-button" for="modal-one">Sign Up</label></li>
+	      </ul>
+	    </nav>
 
-    {{> yield}}
+  		{{> yield}}
 
-    <footer>
-		<div class="gradient container">
-			 <nav>
-			 	<ul>
-			 		<li class="footer-item"><a href="/about">About</a></li>
-			 		<li class="footer-item"><a href="/faqs">FAQs</a></li>
-			 		<li class="footer-item"><a href="/privacy">Privacy & Terms</a></li>
-			 		<li class="footer-item"><a href="/contact">Contact</a></li>
-			 	</ul>
-    		</nav>
-		</div>
-	</footer>
+	    <footer>
+			<div class="gradient container">
+				 <nav>
+				 	<ul>
+				 		<li class="footer-item"><a href="/about">About</a></li>
+				 		<li class="footer-item"><a href="/faqs">FAQs</a></li>
+				 		<li class="footer-item"><a href="/privacy">Privacy & Terms</a></li>
+				 		<li class="footer-item"><a href="/contact">Contact</a></li>
+				 	</ul>
+	    		</nav>
+			</div>
+		</footer>
+	<!-- Show content after fully loaded -->
+	 <script type="text/javascript">
+		$(window).load(function(){
+			$("#fader").fadeOut(200);
+		});
+	 </script> 
 </template>
+

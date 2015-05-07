@@ -52,6 +52,10 @@ iframe#player{
   z-index: -1000;
 }
 
+#player{
+  z-index: -1000;
+}
+
 @media (min-aspect-ratio: 16/9) {
   .video-container video {
     height: 300%; top: -100%;
