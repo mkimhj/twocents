@@ -3,6 +3,7 @@ document.addEventListener("webkitfullscreenchange", FShandler);
 document.addEventListener("mozfullscreenchange", FShandler);
 document.addEventListener("MSFullscreenChange", FShandler);
 
+// Full screen exit for all browsers
 function exitFullscreen() {
   if(document.exitFullscreen) {
     document.exitFullscreen();
@@ -13,7 +14,7 @@ function exitFullscreen() {
   }
 }
 
-// Find the right method, call on correct element
+// Full screen launch for all browsers
 function launchIntoFullscreen(element) {
   if(element.requestFullscreen) {
     element.requestFullscreen();
@@ -26,6 +27,7 @@ function launchIntoFullscreen(element) {
   }
 }
 
+// Pause video and exit full screen, hide related elements
 function exitVideo() {
   iframe = document.getElementById("iframe");
   player.pauseVideo();
@@ -40,7 +42,7 @@ onYouTubeIframeAPIReady = function () {
         height: "405", 
         width: "720", 
         videoId: "wRtLMYtwMhE", 
-        playerVars:{'color': "red", 
+        playerVars:{'color': "white", 
                     'showinfo': 0, 
                     'theme': 'light', 
                     'rel': 0, 
@@ -65,6 +67,7 @@ onYouTubeIframeAPIReady = function () {
 //Load Youtube
 YT.load();
 
+// Template events
 Template.video.events({
   'click #video-button': function(event) {
     player.playVideo();
@@ -82,6 +85,8 @@ Template.video.events({
   }
 });
 
+
+// Fullscreen event callback
 function FShandler() {
   if (!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) {
     exitVideo();

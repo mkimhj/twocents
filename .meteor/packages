@@ -21,3 +21,4 @@ npm-container
 aldeed:console-me
 cmather:handlebars-server
 iron:router
+mrt:facebook-sdk

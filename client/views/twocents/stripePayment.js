@@ -105,9 +105,6 @@ Template.stripePayment.events({
 
           var form = $("#donation-form");
 
-          // TODO: Disable the submit button to prevent repeated clicks below doesn't work...
-          // form.find('button').prop('disabled', true);
-
           //Pass form to Stripe API
           Stripe.card.createToken(form, stripeResponseHandler);
         }
