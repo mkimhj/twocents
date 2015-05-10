@@ -250,7 +250,7 @@ iframe {
 
 #navigation {
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
+  /* background: rgba(255, 255, 255, 0.9); */
   opacity: 1.0;
   position: fixed;
   height: 80px;
@@ -281,10 +281,11 @@ iframe {
       background-size: contain;
       text-decoration: none; 
       width: 150px;
-      margin-top: 25px;
-      margin-left: 15px;}
+      margin-top: 30px;
+      margin-left: -117px;}
     #navigation li.nav-item {
-      margin-top: 11px;
+      margin-top: 15px;
+      margin-right: -108px;
       float:right; }
     #navigation li.nav-item a {
       font: normal 14px "Proxima Nova", sans-serif;
@@ -304,7 +305,7 @@ footer {
 */  color: #245dc1;
   position: relative;
   width: 100%;
-  padding: 20px 0 20px 0px; }
+  padding: 0px 0 0px 0px; }
   footer li {
     display: inline-block;
     margin: 0; }
