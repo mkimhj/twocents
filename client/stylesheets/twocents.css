@@ -243,8 +243,8 @@ iframe {
 }
 
 #navbar {
-  margin-right: 4.5%;
-  margin-left: 4.5%;
+  max-width: 85%;
+  margin: auto;
 }
 
 #navigation {
