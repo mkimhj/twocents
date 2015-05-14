@@ -18,6 +18,10 @@ MongoDB Hosting: www.mongolab.com
 
 Web Server Hosting: www.modulus.io
 
+Facebook URL Debugger for Sharing: https://developers.facebook.com/tools/debug/og/object/
+
+Twitter Card Debugger for Sharing: https://cards-dev.twitter.com/validator
+
 **To run locally:**
 meteor --settings config/test-settings.json
 

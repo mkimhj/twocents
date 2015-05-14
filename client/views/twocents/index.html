@@ -1,11 +1,25 @@
 <head>
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	
 	<title>Two Cents</title>
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="img/favicon050615.ico?v=2" type="image/ico" />
 
+	<!-- Facebook Crawler Tags -->
+	<meta property="og:title" content="Two Cents" />
+	<meta property="og:url" content="https://twocentsaday.com" />
+	<meta property="og:image" content="https://twocentsaday.com/img/fb-image.jpg" /> 
+
+	<!-- Try and get og:video working -->
+
+	<!-- Twitter Crawler Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@flickr" />
+
 	<!-- Google Search Description  -->
-	<meta name="description" content="Spreading philanthropy, two cents a day." />
+	<meta name="description" property="og:description" content="Spreading philanthropy, two cents a day." />
 
 	<!-- Google Analytics Integration  -->
 	<script>
@@ -19,9 +33,6 @@
 	</script>
 
 </head>
-
-<body>
-</body>
 
 <template name="index">
 	{{> video}}

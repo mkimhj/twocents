@@ -219,17 +219,16 @@ iframe {
 }
 
 #navbar {
-  max-width: 960px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: 85%;
+  margin: auto;
 }
 
 #navigation {
-  z-index: 1;
-  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.75);
   opacity: 1.0;
   position: fixed;
-  height: 80px;
+  height: 78px;
   top: 0;
   left: 0;
   width: 100%;
@@ -243,9 +242,9 @@ iframe {
     display: inline-block;
     margin: 0; }
     #navigation li a {
-      background: url("img/two-cents-black.png") center no-repeat;
+      background: url("img/two-cents-white.png") center no-repeat;
       display: block;
-      padding: 20px;
+      padding: 18px 0px 18px 0px;
       line-height: 20px;
       color: black; }
     #navigation li.logo-nav {
@@ -257,10 +256,9 @@ iframe {
       background-size: contain;
       text-decoration: none; 
       width: 150px;
-      margin-top: 25px;
-      margin-left: 15px;}
+      margin-top: 21px;}
     #navigation li.nav-item {
-      margin-top: 11px;
+      margin-top: 6px;
       float:right; }
     #navigation li.nav-item a {
       font: normal 14px "Proxima Nova", sans-serif;
@@ -271,27 +269,40 @@ iframe {
         color: #39BAFF; }
 
 footer {
-  background-image:
+/*  background-image:
   linear-gradient(
     to top right, 
     #2D78D8, #5EA7D1
-  );
-/*  background: #f5f5f5;
-*/  color: #245dc1;
+  );*/
+  background: #FFFFFF;
+  color: #245dc1;
   position: relative;
   width: 100%;
-  padding: 20px 0 20px 0px; }
+  padding: 0px 0 0px 0px; }
   footer li {
     display: inline-block;
     margin: 0; }
     footer li a {
       display: block;
-      padding: 20px;
+      padding: 12px;
       line-height: 20px;
 /*      color: #245dc1; 
-*/      color: white;
+*/      color: black;
       letter-spacing: 0.03em;
-      text-decoration: none; }
+      text-decoration: none;
+      font-size: 1em; }
       footer li a:hover {
         color: #39BAFF;
       }
+
+
+#fader {
+   position: fixed;
+   left: 0px; 
+   right: 0px; 
+   top: 0px; 
+   bottom: 0px; 
+   background-color: white;
+   z-index: 999999; /* Higher than anything else in the document */
+
+ }
