@@ -1,0 +1,31 @@
+#team {
+  width: 100%;
+  min-height: 100%;
+}
+
+.founder-row {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon {
+  opacity: 0.6;
+  height: 200px;
+  width: 200px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left: 10px;
+  padding-right:10px;
+  transition: 0.1s;
+}
+
+.icon:hover {
+	opacity: 1;
+}
+
+.founder-text {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
