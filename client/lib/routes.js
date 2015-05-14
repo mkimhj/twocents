@@ -1,4 +1,10 @@
 Router.route('/', function() {
+	this.render('temp');
+	YT.load();
+	window.scrollTo(0, 0);
+});
+
+Router.route('/dev', function() {
 	this.render('index');
 	YT.load();
 	window.scrollTo(0, 0);
