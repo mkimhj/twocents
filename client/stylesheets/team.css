@@ -3,6 +3,10 @@
   min-height: 100%;
 }
 
+#founder-text {
+  padding: 50px;
+}
+
 .founder-row {
   width: 100%;
   max-width: 960px;
