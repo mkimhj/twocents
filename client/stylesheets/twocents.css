@@ -31,12 +31,17 @@ body {
   background-size: 100% 100%;
 }
 
+.blue-background {
+  width: 100%;
+  background-color: #33C3F0;
+}
+
 .top-buffer {
   padding-top: 100px;
 }
 
 .bottom-buffer {
-  padding-bottom: 20px;
+  padding-bottom: 100px;
 }
 
 #team {
@@ -133,6 +138,7 @@ img {
   font-family: "HelveticaNeue-UltraLight", Helvetica, sans-serif;
   letter-spacing: 0.2rem;
   margin-bottom: 10px; 
+  color: black;
 }
 
 .section-paragraph {
@@ -154,7 +160,63 @@ img {
   font-size: 18px;
   font-weight: lighter;
   line-height: 28px;
-  color: #777;
+  color: #FFF;
+}
+
+.flex-container {
+  position: relative;
+  left: -130%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.flex-item {
+  background: white;
+  width: 30.3571428571%;
+  height: 500px;
+  margin:0 1.4880952381% 20px;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+  overflow: hidden;
+}
+
+.flex-title {
+  color: black;
+}
+
+.flex-description {
+  color:black;
+}
+
+.img-container {
+  height: 300px;
+  max-width: none;
+  position: relative;
+  left: -30%;
+}
+
+.come-in {
+  transform: translateX(130%);
+  -webkit-transition: all 800ms cubic-bezier(0.175, 0.885, 0.280, 1); /* older webkit */
+  -webkit-transition: all 800ms cubic-bezier(0.175, 0.885, 0.280, 1.285); 
+     -moz-transition: all 800ms cubic-bezier(0.175, 0.885, 0.280, 1.285); 
+       -o-transition: all 800ms cubic-bezier(0.175, 0.885, 0.280, 1.285); 
+          transition: all 800ms cubic-bezier(0.175, 0.885, 0.280, 1.285); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.280, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.280, 1.285); 
+     -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.280, 1.285); 
+       -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.280, 1.285); 
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.280, 1.285); /* custom */
 }
 
 iframe#player {
