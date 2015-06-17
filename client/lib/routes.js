@@ -15,8 +15,8 @@ Router.route('/about', function () {
 	window.scrollTo(0, 0);
 });
 
-Router.route('/privacy', function() {
-	this.render('privacy');
+Router.route('/legal', function() {
+	this.render('legal');
 	window.scrollTo(0,0);
 });
 
