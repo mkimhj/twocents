@@ -1,0 +1,22 @@
+<template name="faqs">
+	<div class="faq-banner">
+		<div class="faq-overlay"></div>
+		<div class="container">
+			<center>
+				<h1 class="white-text faq-title">Frequently Asked Questions</h1>
+			</center>
+		</div>
+	</div>
+	<div class="container top-buffer">
+		<h4>
+			<ul class="qa-list">
+				{{#each questions}}
+				<li class="question">{{question}}
+					<div class="answer hide"><h5>A:  {{answer}}</h5></div>
+				</li>
+				{{/each}}
+			</ul>
+		</h4>
+	</div>
+	<div class="bottom-buffer"></div>
+</template>

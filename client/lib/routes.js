@@ -25,6 +25,11 @@ Router.route('/contact', function() {
 	window.scrollTo(0,0);
 });
 
+Router.route('/faqs', function() {
+	this.render('faqs');
+	window.scrollTo(0,0);
+});
+
 Router.configure({
   layoutTemplate: 'ApplicationLayout'
 });
