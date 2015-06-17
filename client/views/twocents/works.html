@@ -1,21 +1,39 @@
 <template name="works">
 	<div class="works-container">
 		<div class="overlay"></div>
-		<div class="container">
-			<center>
-				<h1 class="white-text top-buffer center">How You Can Help</h1><br>
-				<ul class="section-paragraph-white">
-					<li>Register to be a donor, you'll give two cents a day to provide help to our world's biggest problems.</li><br>
+			<div class="works-content">
+				<center>
+					<h1 class="white-text top-buffer center">How You Can Help</h1><br>
+					<div class="section-paragraph-white">
+						<div class="third-columns">
+							<img src="img/cash-icon.png" height="150">
+							<br>
+							<p>Register to be a donor</p> 
+							<br>
+							You will give two cents a day to provide help to our world's biggest problems.
+							<br><br>
+							<label class="button button-green splash-button" for="modal-one">Donate Now</label>
+						</div>
 
-					<label class="button button-green splash-button" for="modal-one">Donate Now</label>
+						<div class="third-columns">
+							<img src="img/share-icon.png" height="150">
+							<br>
+							<p> Share with friends and family</p>
+							<br>
+							We can use the strength in numbers to make a meaningful difference and turn your pocket change donation into impactful lump sum donations.
+							<br><br>
+							{{> share}} 
+						</div>
 
-					<li>Share with your friends and family, we can use the strength in numbers to make a meaningful difference and turn your pocket change donation into impactful lump sum donations.</li><br>
-
-					{{> share}}
-
-					<li>Sit back and relax, we'll send you updates over email whenever we use your two cents to provide aid. Your wallet won't notice a difference, but the world will.</li>
-				</ul>
-			</center>
+						<div class="third-columns">
+							<img src="img/email-icon-red.png" height="150">
+							<br>
+							<p>Sit back and relax</p> 
+							<br>
+							We will send you updates over email whenever we use your two cents to provide aid. Your wallet won't notice a difference, but the world will.
+						</div>
+					</div>
+				</center>
+			</div>
 		</div>
-	</div>
 </template>

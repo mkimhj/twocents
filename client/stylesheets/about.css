@@ -1,0 +1,71 @@
+#team {
+  width: 100%;
+  min-height: 100%;
+}
+
+#founder-text {
+  padding: 50px;
+  height: 8em;
+}
+
+.founder-row {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon {
+  opacity: 0.65;
+  height: 200px;
+  width: 200px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left: 10px;
+  padding-right:10px;
+  transition: 0.1s;
+}
+
+.icon:hover {
+	opacity: 1;
+}
+
+.team_member {
+/*  width: 24%;*/
+  display: inline-block;
+}
+
+.team_member h3 {
+  font-size: 20px
+}
+
+.team_member p {
+  font-size: 12px;
+  color: gray;
+}
+
+.contact-icons {
+  padding-top: 5px;
+  width:30px;
+  height:30px;
+  opacity: 0.65;
+}
+
+.contact-icons:hover {
+  opacity: 1;
+}
+
+#story {
+  padding: 100px;
+  background-image: url('img/pennies.jpg');
+  background-size: 100%;
+}
+
+#story .section-header {
+  color: white;
+}
+
+.our-story {
+  padding: 20px;
+  color: white;
+}
