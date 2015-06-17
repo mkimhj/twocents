@@ -27,6 +27,7 @@ function launchIntoFullscreen(element) {
   }
 }
 
+
 // Pause video and exit full screen, hide related elements
 function exitVideo() {
   iframe = document.getElementById("iframe");
