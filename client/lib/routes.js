@@ -11,7 +11,7 @@ Router.route('/dev', function() {
 });
 
 Router.route('/about', function () {
-	this.render('team');
+	this.render('about');
 	window.scrollTo(0, 0);
 });
 
