@@ -38,5 +38,6 @@ Thumbs.db
 
 # API Credentials #
 ###################
-config/settings.json
+config/*
 private/*
+.settings/*
