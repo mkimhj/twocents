@@ -21,7 +21,7 @@
   background: linear-gradient(to bottom right, purple , MediumSlateBlue); /* Standard syntax */
 }
 
-.faq-title {
+.banner-title {
   display: block;
   padding-top: 20vh;
   text-shadow: 0px 0px 30px black;

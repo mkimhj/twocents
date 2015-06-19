@@ -25,6 +25,51 @@ body {
   font-family: "Proxima Nova", "Avenir", sans-serif; 
 }
 
+.pocket {
+  width: 25vh;
+  margin-left: -2%;
+  padding: 50px;
+}
+
+.mission-statement a {
+  text-decoration: none;
+  color: #696d71;
+}
+
+.mission-statement a:hover {
+  color: #39BAFF;
+}
+
+.button {
+  border-radius: 20px;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+.button-blue {
+  background-color: dodgerblue;
+  border-color: dodgerblue;
+  color: white;
+}
+
+.button-pink {
+  background-color: #DF3D82;
+  border-color: #DF3D82;
+  color: white;
+}
+
+.button-green {
+  background-color: #61d395;
+  border-color: #61d395;
+  color: white;
+}
+
+.button-green:hover {
+  background-color: #51c385;
+  border-color: #51c385;
+  color: white;
+}
+
 .donate-container {
   width: 100%;
   background-image: url("img/coins-growth.jpeg");
@@ -33,7 +78,6 @@ body {
 
 .works-container {
   bottom: 0;
-  height: 100%;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -85,6 +129,8 @@ body {
   background-position: center;
   background-repeat: no-repeat; 
   z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 @media (min-aspect-ratio: 16/9) {
@@ -259,22 +305,6 @@ iframe {
   padding-right: 10px;
 }
 
-.button-green {
-  background-color: #61d395;
-  border-color: #61d395;
-  color: white;
-}
-
-.button-green:hover {
-  background-color: #70e2a4;
-  border-color: #70e2a4;
-  color: white;
-}
-
-.sign-up {
-  padding-top: 9px;
-}
-
 .loader {
   margin: 6em auto;
   font-size: 10px;
@@ -362,7 +392,7 @@ iframe {
       width: 150px;
       margin-top: 21px;}
     #navigation li.nav-item {
-      margin-top: 6px;
+      margin-top: 19px;
       float:right; }
     #navigation li.nav-item a {
       font: normal 14px "Proxima Nova", sans-serif;
