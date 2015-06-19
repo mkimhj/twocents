@@ -1,0 +1,100 @@
+.flex-container {
+  width: 85%;
+  margin: auto;
+  position: relative;
+  padding: auto;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;;
+}
+
+.flex-item {
+  box-shadow: 0px 0px .1px black;
+  display: inline;
+  background: white;  
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  color: white;
+  font-size: 3em;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-container {
+  height: 300px;
+  max-width: none;
+  position: relative;
+  left: -30%;
+}
+
+.gradient-overlay {
+  background: linear-gradient(to top, black, transparent);
+  position: absolute;
+  bottom: 0px;
+  width: 300px;
+  height: 80px;
+  z-index: 10;
+  opacity: .5;
+}
+
+.flex-text {
+  color: white;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 20;
+  padding: 10px;
+  text-shadow: 0px 0px 10px black;
+}
+
+.flex-org {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 1
+}
+
+.flex-title {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .flex-container {
+    width: 100%;
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .flex-container {
+    width: 85%;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  .flex-container {
+    width: 70%;
+  }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1300px) {
+  .flex-container {
+    width: 100%;
+  }
+}
