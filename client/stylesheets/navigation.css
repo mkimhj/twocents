@@ -1,0 +1,131 @@
+#navbar {
+  max-width: 85%;
+  margin: auto;
+}
+
+#navigation {
+  z-index: 1000;
+  background: rgba(245, 245, 245, 0.75);
+  opacity: 1.0;
+  position: fixed;
+  height: 78px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  transition: 0.5s; }
+  #navigation.hidden {
+    background: rgba(0, 0, 0, 0);
+    opacity: 0.8;
+    visibility: true; }
+  #navigation li {
+    display: inline-block;
+    margin: 0; }
+    #navigation li a {
+      background: url("img/two-cents-white.png") center no-repeat;
+      display: block;
+      padding: 18px 0px 18px 0px;
+      line-height: 20px;
+      color: black; }
+    #navigation li.logo-nav {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none; }
+    #navigation li.logo-nav a {
+      background-size: contain;
+      text-decoration: none; 
+      width: 150px;
+      margin-top: 21px;}
+    #navigation li.nav-item {
+      margin-top: 19px;
+      float:right; }
+    #navigation li.nav-item a {
+      font: normal 14px "Proxima Nova", sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none; }
+      #navigation li.nav-item a:hover {
+        color: #39BAFF; }
+
+footer {
+/*  background-image:
+  linear-gradient(
+    to top right, 
+    #2D78D8, #5EA7D1
+  );*/
+  background: #fcfcfc;
+  color: #245dc1;
+  position: relative;
+  width: 100%;
+  padding: 0px 0 0px 0px; }
+  footer li {
+    display: inline-block;
+    margin: 0; }
+    footer li a {
+      display: block;
+      padding: 12px;
+      line-height: 20px;
+/*      color: #245dc1; 
+*/      color: black;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      font-size: 1em; }
+      footer li a:hover {
+        color: #39BAFF;
+      }
+  
+
+/*Loading Animation*/
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+   -webkit-animation: flickerAnimation 1s infinite;
+   -moz-animation: flickerAnimation 1s infinite;
+   -o-animation: flickerAnimation 1s infinite;
+    animation: flickerAnimation 1s infinite;
+
+  -webkit-animation-timing-function:ease;
+  -moz-animation-timing-function:ease;
+  -ms-animation-timing-function:ease;
+  -o-animation-timing-function:ease;
+  animation-timing-function:ease;
+}
+
+#fader {
+  display: block;
+}
+
+#opener {
+  height: 7vh;
+  padding-top: 44vh;
+}
+
+#fader {
+   position: fixed;
+   left: 0px; 
+   right: 0px; 
+   top: 0px; 
+   bottom: 0px; 
+   background-color: white;
+   z-index: 999999;
+
+ }

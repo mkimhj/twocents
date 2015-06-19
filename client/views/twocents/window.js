@@ -30,3 +30,8 @@ $(window).scroll(function() {
     $("#navigation li a").css("background-size", "contain")
   }
 });
+
+// fade in window
+$(window).load(function(){
+  $("#fader").fadeOut(200);
+});
