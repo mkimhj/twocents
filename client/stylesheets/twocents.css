@@ -152,30 +152,47 @@ body {
   filter: blur(5px);
 }
 
+.share-icons {
+  background-size: 46px;
+  height: 48px;
+  width: 48px;
+}
+
+.share-icons:hover {
+  background-size: 46px;
+  height: 48px;
+  width: 48px;
+  transition: 0.2s;
+}
+
 #facebook-button {
-  opacity: 1;
   position: relative;
-  height: auto;
-  width: 200px;
+  background-image: url("img/facebook-circle-grayclear-icon.png");
+  background-repeat: no-repeat;
 }
 
 #facebook-button:hover {
-  opacity: 0.9;
+  position: relative;
+  background-image: url("img/facebook-circle-filled-icon.png");
+  background-repeat: no-repeat;
 }
 
 #twitter-button {
-  opacity: 1;
   position: relative;
-  height: auto;
-  width: 200px;
+  background-image: url("img/twitter-circle-grayclear-icon.png");
+  background-repeat: no-repeat;
 }
 
 #twitter-button:hover {
-  opacity: 0.9;
+  position: relative;
+  background-image: url("img/twitter-circle-blue-filled-icon.png");
+  background-repeat: no-repeat;
 }
 
 .share-links {
   z-index: 0;
+  display: inline-block;
+  padding: 2%;
 }
 
 .blue-background {
