@@ -14,9 +14,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-/*  font-size: 100%;
-*//*  font: inherit;
-*/  vertical-align: baseline; }
+  vertical-align: baseline; }
 
 html,
 body {
@@ -40,7 +38,7 @@ body {
   color: #39BAFF;
 }
 
-.button {
+.button, #submit-button, #submit-paypal-button {
   border-radius: 20px;
   margin-bottom: 0px;
   font-weight: 500;
@@ -76,9 +74,124 @@ body {
   background-size: 100%;
 }
 
-.blue-background {
+.works-container {
+  bottom: 0;
   width: 100%;
-  background-color: #33C3F0;
+  position: relative;
+  overflow: hidden;
+}
+
+.third-columns {
+  display: inline-table;
+  width: 31%;
+  padding: 1%;
+  vertical-align: top;
+}
+
+.third-columns p {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.works-content {
+  position: relative;
+  z-index: 100;
+}
+
+.works-blurb{
+  position: absolute;
+  bottom: 20%;
+  left: 40%;
+  color: white;
+  right: 3%;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.overlay {
+  z-index: 10;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  left: 0; 
+  top: 0; 
+}
+
+.works-wallpaper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/helping-hand.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat; 
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .works-wallpaper {
+    height: 300%; top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .works-wallpaper {
+    width: 300%; left: -100%;
+  }
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.share-icons {
+  background-size: 46px;
+  height: 48px;
+  width: 48px;
+}
+
+.share-icons:hover {
+  background-size: 46px;
+  height: 48px;
+  width: 48px;
+  transition: 0.2s;
+}
+
+#facebook-button {
+  position: relative;
+  background-image: url("img/facebook-circle-grayclear-icon.png");
+  background-repeat: no-repeat;
+}
+
+#facebook-button:hover {
+  position: relative;
+  background-image: url("img/facebook-circle-filled-icon.png");
+  background-repeat: no-repeat;
+}
+
+#twitter-button {
+  position: relative;
+  background-image: url("img/twitter-circle-grayclear-icon.png");
+  background-repeat: no-repeat;
+}
+
+#twitter-button:hover {
+  position: relative;
+  background-image: url("img/twitter-circle-blue-filled-icon.png");
+  background-repeat: no-repeat;
+}
+
+.share-links {
+  z-index: 0;
+  display: inline-block;
+  padding: 2%;
+>>>>>>> 9a3f1900ee46fca1b03273d7db60e0eee168b6b6
 }
 
 .top-buffer {
@@ -87,24 +200,6 @@ body {
 
 .bottom-buffer {
   padding-bottom: 100px;
-}
-
-#modal-one {
-  display: none;
-}
-
-#modal-two {
-  display: none;
-}
-
-.brandingLogoView{
-  position: fixed;
-  left: 14px;
-  bottom: 14px;
-  background-image: url("img/powered-by-stripe.png");
-  background-size: 100% 100%;
-  width: 123px;
-  height: 30px;
 }
 
 h1,
@@ -127,24 +222,11 @@ img {
 }
 
 .black {
-    background: #000000;
+  background: #000000;
 }
 
 .white {
   background: #FFFFFF;
-}
-
-.logo {
-  position: relative;
-  top: 50%;
-  margin: 0 auto;
-  width: 100%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.video {
-	padding-top: 50%;
 }
 
 .section-header {
@@ -167,9 +249,9 @@ img {
 }
 
 .section-paragraph-white {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: lighter;
-  line-height: 28px;
+  line-height: 1.5;
   color: #FFF;
 }
 
@@ -181,22 +263,19 @@ img {
   font-weight: normal;
 }
 
-iframe#player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  max-width: 720px;
-  max-height: 405px;
-  z-index: 0;
+/*Modal Stuff*/
+#modal-one, #modal-two {
+  display: none;
 }
 
-iframe {
-	margin: auto;
+.brandingLogoView{
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  background-image: url("img/powered-by-stripe.png");
+  background-size: 100% 100%;
+  width: 123px;
+  height: 30px;
 }
 
 .btn-close {
@@ -249,92 +328,3 @@ iframe {
 .show {
   display: true;
 }
-
-#navbar {
-  max-width: 85%;
-  margin: auto;
-}
-
-#navigation {
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.75);
-  opacity: 1.0;
-  position: fixed;
-  height: 78px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: block;
-  transition: 0.5s; }
-  #navigation.hidden {
-    background: rgba(0, 0, 0, 0);
-    opacity: 0.8;
-    visibility: true; }
-  #navigation li {
-    display: inline-block;
-    margin: 0; }
-    #navigation li a {
-      background: url("img/two-cents-white.png") center no-repeat;
-      display: block;
-      padding: 18px 0px 18px 0px;
-      line-height: 20px;
-      color: black; }
-    #navigation li.logo-nav {
-      text-transform: uppercase;
-      font-size: 20px;
-      font-weight: bold;
-      text-decoration: none; }
-    #navigation li.logo-nav a {
-      background-size: contain;
-      text-decoration: none; 
-      width: 150px;
-      margin-top: 21px;}
-    #navigation li.nav-item {
-      margin-top: 19px;
-      float:right; }
-    #navigation li.nav-item a {
-      font: normal 14px "Proxima Nova", sans-serif;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none; }
-      #navigation li.nav-item a:hover {
-        color: #39BAFF; }
-
-footer {
-/*  background-image:
-  linear-gradient(
-    to top right, 
-    #2D78D8, #5EA7D1
-  );*/
-  background: #fcfcfc;
-  color: #245dc1;
-  position: relative;
-  width: 100%;
-  padding: 0px 0 0px 0px; }
-  footer li {
-    display: inline-block;
-    margin: 0; }
-    footer li a {
-      display: block;
-      padding: 12px;
-      line-height: 20px;
-/*      color: #245dc1; 
-*/      color: black;
-      letter-spacing: 0.03em;
-      text-decoration: none;
-      font-size: 1em; }
-      footer li a:hover {
-        color: #39BAFF;
-      }
-
-
-#fader {
-   position: fixed;
-   left: 0px; 
-   right: 0px; 
-   top: 0px; 
-   bottom: 0px; 
-   background-color: white;
-   z-index: 999999; /* Higher than anything else in the document */
-
- }

@@ -1,6 +1,10 @@
 <template name="ApplicationLayout">
 	<!-- Fade in div -->
-	<div style="display: block" id="fader">&nbsp;</div>
+	<div id="fader">
+		<center>
+			<img id="opener" class="animate-flicker" src="img/loader.png"/>
+		</center>
+	</div>
 
 	<!-- Navbar -->
 	<nav class="hidden" id="navigation">
@@ -29,12 +33,5 @@
     		</center>
 		</div>
 	</footer>
-	
-	<!-- Show content after fully loaded -->
-	 <script type="text/javascript">
-		$(window).load(function(){
-			$("#fader").fadeOut(200);
-		});
-	 </script> 
 </template>
 
