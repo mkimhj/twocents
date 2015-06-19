@@ -55,17 +55,24 @@
   opacity: 1;
 }
 
-#story {
-  padding: 100px;
+.story-container {
+  height: 50vh;
+  width: 100%;
   background-image: url('img/pennies.jpg');
   background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-#story .section-header {
-  color: white;
+.story-title {
+  display: block;
+  padding-top: 10vh;
+  text-shadow: 0px 0px 30px black;
 }
 
 .our-story {
   padding: 20px;
   color: white;
+  text-shadow: 0px 0px 10px black;
 }
