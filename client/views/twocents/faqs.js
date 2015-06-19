@@ -28,6 +28,12 @@ var QAList = [
 
 			{question: "What if we have physical pocket change donations?", 
 			 answer: "Don’t let it collect dust! Bring it with you next time you’re out and donate it to a homeless person."},
+
+			{question: "What happens after I register to be a donor?",
+			 answer: ""},
+
+			{question: "Is there a Two Cents mobile app?",
+			 answer: ""},
 		  ];
 
 Template.faqs.helpers({
