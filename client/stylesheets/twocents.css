@@ -39,13 +39,10 @@ body {
 }
 
 .third-columns {
-  display: inline-block;
-  width: 25%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
+  display: inline-table;
+  width: 31%;
+  padding: 1%;
   vertical-align: top;
-  z-index: 9999;
 }
 
 .third-columns p {
@@ -54,10 +51,6 @@ body {
 }
 
 .works-content {
-  background-image: url("img/how-we-work.jpg");
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
 }
 
@@ -86,6 +79,32 @@ body {
   -o-filter: blur(5px);
   -ms-filter: blur(5px);
   filter: blur(5px);
+}
+
+#facebook-button {
+  opacity: 1;
+  position: relative;
+  height: auto;
+  width: 200px;
+}
+
+#facebook-button:hover {
+  opacity: 0.9;
+}
+
+#twitter-button {
+  opacity: 1;
+  position: relative;
+  height: auto;
+  width: 200px;
+}
+
+#twitter-button:hover {
+  opacity: 0.9;
+}
+
+.share-links {
+  z-index: 0;
 }
 
 .blue-background {
