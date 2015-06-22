@@ -3,24 +3,16 @@
 		<div class="container">
 			<center>
 				<h1 class="top-buffer center">Join the Movement</h1>
-				<p class="section-paragraph">Everyone can do simple things to make a difference, and every little bit really does count.</p>
-
-
-			</center>
-
-			<div class="row">
-				<div class="nine columns">
-					<img src="img/loader.png">
-				</div>
-
-				<div class="three columns u-pull-right">
-					<label class="button button-green" for="modal-one">Credit Card</label>
-					<label class="button button-green" for="modal-two">Paypal</label>
-				</div>
+				<p class="section-paragraph" id="donate-blurb">Everyone can do simple things to make a difference, and every little bit really does count.</p>
+			<div id="donate-logo">
+				<img src="img/loader.png">
 			</div>
+			<label class="button button-green" id="cc-button" for="modal-one">Credit Card</label>
+			<label class="button button-green" id="pay-pal-button" for="modal-two">Paypal</label>
 
 			{{> stripePayment}}
 			{{> paypalPayment}}
+			</center>
 		</div>
 		<div class="bottom-buffer"></div>
 	</div>

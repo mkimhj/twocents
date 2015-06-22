@@ -70,8 +70,27 @@ body {
 
 .donate-container {
   width: 100%;
-  background: dodgerblue;
+  background: #e8e9e8;
   background-size: 100%
+}
+
+#donate-blurb {
+  padding: 5% 0% 5% 0%;
+}
+
+#donate-logo {
+    -webkit-animation: logo 2s; /* Chrome, Safari, Opera */
+    animation: logo 2s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes logo {
+    50% {-webkit-transform: translateY(50px);}
+}
+
+/* Standard syntax */
+@keyframes logo {
+    50% {transform: translateY(50px);}
 }
 
 .top-buffer {
@@ -207,4 +226,5 @@ img {
 
 .show {
   display: true;
+}
 }
