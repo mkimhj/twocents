@@ -1,14 +1,27 @@
 .works-container {
   bottom: 0;
   width: 100%;
+  height: 100%;
   position: relative;
   overflow: hidden;
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('img/penny-jar.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .works-content {
-  position: relative;
+  position: absolute;
   z-index: 100;
   font-size: 0;
+}
+
+.works-content h1 {
+  padding-bottom: 30px;
 }
 
 .third-columns {
@@ -35,9 +48,16 @@
   font-size: 1em;
   width: 75%;
   line-height: 1.5;
+  color: white;
 }
 
-#register {
+/* One Background Color */
+/*#register, #share, #email {
+  background-color: #f6f6f6;
+}*/
+
+/* Three Separate Background Colors */
+/*#register {
   background-color: #61d395;
 }
 
@@ -47,6 +67,12 @@
 
 #email {
   background-color: #f44747;
+}*/
+
+img.desaturate {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); filter: grayscale(100%);
+  padding: 10px;
 }
 
 .share-links {
@@ -110,6 +136,10 @@
     height: 355px;
     font-size: 12px;
   }
+/*  #register, #share, #email {
+    background-image: url("");
+    background-color: #f6f6f6;
+  }*/
 }
 
 /* Larger than desktop */
