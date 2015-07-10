@@ -24,9 +24,9 @@ body {
 }
 
 .pocket {
-  width: 25vh;
-  margin-left: -2%;
-  padding: 50px;
+  width: 20vh;
+  margin-left: -1.5%;
+  padding: 40px;
 }
 
 .mission-statement a {
@@ -39,9 +39,17 @@ body {
 }
 
 .button, #submit-button, #submit-paypal-button {
-  border-radius: 20px;
+  border-radius: 40px;
   margin-bottom: 0px;
   font-weight: 500;
+}
+
+.splash-button {
+  height: 42px;
+  padding: 0px 33px;
+  font-size: 14px;
+  line-height: 42px;
+  font-weight: 400;
 }
 
 .button-blue {
@@ -112,7 +120,7 @@ a,
 .flex-title,
 .flex-org {
   font-family: "Proxima Nova", "Avenir", sans-serif; 
-  letter-spacing: 0rem;
+  letter-spacing: normal;
 }
 
 img {
@@ -131,7 +139,7 @@ img {
 .section-header {
   /*font-size: 70;*/
   /*font-family: "HelveticaNeue-UltraLight", Helvetica, sans-serif;*/
-  letter-spacing: 0.2rem;
+  /*letter-spacing: 0.2rem;*/
   margin-bottom: 10px; 
   color: black;
 }
