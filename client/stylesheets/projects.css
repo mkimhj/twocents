@@ -27,6 +27,11 @@
   font-size: 3em;
   overflow: hidden;
   position: relative;
+
+  /* ADDITIONS FOR ANIMATIONS */
+  z-index: 9;
+  cursor: default;
+  overflow: hidden;
 }
 
 .img-container {
@@ -34,6 +39,27 @@
   max-width: none;
   position: relative;
   left: -30%;
+
+  /* ADDITIONS FOR ANIMATIONS */
+  display: block;
+  margin-left: -10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ADDITIONS FOR ANIMATIONS */
+.flex-item:hover > img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.6;
 }
 
 .gradient-overlay {

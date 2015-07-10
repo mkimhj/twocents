@@ -34,6 +34,16 @@
   padding-left: 10px;
   padding-right:10px;
   transition: 0.1s;
+
+  /* ADDITIONS FOR ANIMATIONS */
+  display: block;
+  left: 10px;
+  margin-left: -10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .icon:hover {
@@ -43,6 +53,13 @@
 .team_member {
 /*  width: 24%;*/
   display: inline-block;
+
+  /* ADDITIONS FOR ANIMATIONS */
+  z-index: 9;
+  cursor: default;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
 }
 
 .team_member h3 {
@@ -52,6 +69,18 @@
 .team_member p {
   font-size: 12px;
   color: gray;
+}
+
+/* ADDITIONS FOR ANIMATIONS */
+.team_member:hover > img {
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: 0.6;
 }
 
 .contact-icons {

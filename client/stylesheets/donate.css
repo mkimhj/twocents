@@ -17,17 +17,6 @@
   padding-bottom: 30px;
 }
 
-.frost {
-	container:"";
-    -webkit-filter: blur(50px);
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
 #donate-blurb {
   padding: 15% 0% 5% 0%;
   color: white;
