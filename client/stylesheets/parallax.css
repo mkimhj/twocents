@@ -1,0 +1,34 @@
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  /*padding: 40px 0;*/
+  /*height: 90%;*/
+}
+section.module.parallax {
+  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+section.module.parallax-1 {
+  background-image: none;
+}
+section.module.parallax-2 {
+  background-image:     
+    linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url('img/penny-jar.jpg');
+}
+section.module.parallax-3 {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('img/pennies-2.jpg');
+}
