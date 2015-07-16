@@ -83,6 +83,13 @@ Template.video.events({
 
   'click #close-button': function(event) {
     exitVideo();
+  },
+
+  'click .next-arrow': function(event) {
+    var missionTop = $("#mission-statement").offset().top;
+    $('html,body').animate({
+      scrollTop: (missionTop - 25)
+    }, 500);
   }
 });
 

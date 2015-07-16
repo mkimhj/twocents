@@ -127,9 +127,6 @@
 
 /* Larger than mobile */
 @media (min-width: 400px) {
-  .row {
-    display: inline-block;
-  }
   .founder-icons {
     padding: 100px 0px 50px 0px;
   }

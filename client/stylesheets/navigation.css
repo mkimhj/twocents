@@ -5,7 +5,7 @@
 
 #navigation {
   z-index: 1000;
-  background: rgba(245, 245, 245, 0.75);
+  background: rgba(235, 235, 235, 0.75);
   opacity: 1.0;
   position: fixed;
   height: 78px;

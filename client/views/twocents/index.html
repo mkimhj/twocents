@@ -5,7 +5,7 @@
 	<title>Two Cents</title>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="img/favicon050615.ico?v=2" type="image/ico" />
+	<link rel="shortcut icon" href="img/favicon-full.ico?v=2" type="image/ico" />
 
 	<!-- Facebook Crawler Tags -->
 	<meta property="og:title" content="Two Cents" />
@@ -36,10 +36,20 @@
 </head>
 
 <template name="index">
+	<section class="module parallax parallax-1">
 	{{> video}}
+	</section>
+	<section class="module content">
 	{{> mission}}
+	</section>
+	<section class="module parallax parallax-2">
 	{{> works}}
+	</section>
+	<section class="module content">
 	{{> projects}}
+	</section>
+	<section class="module parallax parallax-3">
 	{{> donate}}
+	</section>
 </template>
 
