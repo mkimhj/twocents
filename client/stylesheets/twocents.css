@@ -23,6 +23,19 @@ body {
   font-family: "Proxima Nova", "Avenir", sans-serif;
 }
 
+.gray-background {
+  background-color: #f9f9f9;
+}
+
+.green-inline {
+  color: #59b390;
+  display: inline;
+}
+
+.inline {
+  display: inline-block;
+}
+
 .pocket {
   width: 20vh;
   margin-left: -1.5%;
@@ -46,16 +59,27 @@ body {
 }
 
 .button-white {
-  border: 2px solid #ddd  ;
-  color: #FCFCFC;
+  border: 2px solid #fff  ;
+  color: white;
+}
+
+.button-black {
+  color: #696d71;
+}
+
+.button-black:hover {
+  border: 1px solid #666;
+  /*color: #234D20;*/
+  /*color: #410936;*/
+  /*color: #77CCA4;*/
+  /*color: #3A89C9;*/
+  color: #69C9A0;
 }
 
 .button-white:hover {
-  /*background-color: white;*/
-  color: white;
+  background-color: white;
+  color: #59b390;
   border: 2px solid #fff;
-  font-weight: 600;
-  text-shadow: 1px 1px 5px black;
 }
 
 .big-button {
@@ -66,29 +90,6 @@ body {
   margin: 5px;
 }
 
-.button-blue {
-  background-color: dodgerblue;
-  border-color: dodgerblue;
-  color: white;
-}
-
-.button-pink {
-  background-color: #DF3D82;
-  border-color: #DF3D82;
-  color: white;
-}
-
-.button-green {
-  background-color: #61d395;
-  border-color: #61d395;
-  color: white;
-}
-
-.button-green:hover {
-  background-color: #51c385;
-  border-color: #51c385;
-  color: white;
-}
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes logo {
@@ -104,8 +105,16 @@ body {
   padding-top: 100px;
 }
 
+.half-top-buffer {
+  padding-top: 50px;
+}
+
 .bottom-buffer {
   padding-bottom: 100px;
+}
+
+.half-bottom-buffer {
+  padding-bottom: 50px;
 }
 
 h1,
@@ -234,4 +243,15 @@ img {
 .show {
   display: true;
 }
+
+#facebook-button {
+  position: relative;
+  background-image: url("img/facebook-circle-filled-icon.png");
+  background-repeat: no-repeat;
+}
+
+#twitter-button {
+  position: relative;
+  background-image: url("img/twitter-circle-blue-filled-icon.png");
+  background-repeat: no-repeat;
 }

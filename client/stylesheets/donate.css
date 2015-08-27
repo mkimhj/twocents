@@ -1,15 +1,15 @@
 .donate-container {
   width: 100%;
-/*  position: relative;
+  position: relative;
   overflow: hidden;
-  background-image: 
+  background-image:
     linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
     ),
     url('img/pennies-2.jpg');
   background-repeat: no-repeat;
-  background-size: cover;*/
+  background-size: cover;
 }
 
 .donate-container h1 {

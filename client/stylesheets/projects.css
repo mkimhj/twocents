@@ -19,7 +19,7 @@
 .flex-item {
   box-shadow: 0px 0px .1px black;
   display: inline;
-  background: white;  
+  background: white;
   width: 300px;
   height: 300px;
   margin: 10px;
@@ -52,11 +52,11 @@
 
 /* ADDITIONS FOR ANIMATIONS */
 .flex-item:hover > img {
-  -webkit-transform: scale(1.03);
-  -moz-transform: scale(1.03);
-  -o-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  transform: scale(1.03);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=30)";
   opacity: 1;
 }

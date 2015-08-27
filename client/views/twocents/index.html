@@ -1,7 +1,7 @@
 <head>
 	<!-- Google Web Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	
+
 	<title>Two Cents</title>
 
 	<!-- Favicon -->
@@ -10,7 +10,7 @@
 	<!-- Facebook Crawler Tags -->
 	<meta property="og:title" content="Two Cents" />
 	<meta property="og:url" content="https://twocentsaday.com" />
-	<meta property="og:image" content="https://twocentsaday.com/img/fb-image.jpg" /> 
+	<meta property="og:image" content="https://twocentsaday.com/img/fb-image.jpg" />
 
 	<!-- Try and get og:video working -->
 
@@ -36,20 +36,18 @@
 </head>
 
 <template name="index">
-	<section class="module parallax parallax-1">
+	<!-- <div class="module parallax parallax-1"> -->
 	{{> video}}
-	</section>
-	<section class="module content">
+	<!-- </div> -->
 	{{> mission}}
-	</section>
-	<section class="module parallax parallax-2">
-	{{> works}}
-	</section>
-	<section class="module content">
-	{{> projects}}
-	</section>
-	<section class="module parallax parallax-3">
+	<!-- <div class="module parallax parallax-2"> -->
+	<!-- {{> works}} -->
+	{{> worksOne}}
+	<!-- </div> -->
+	{{> worksTwo}}
+	<!-- <div class="module parallax parallax-3"> -->
+	{{> worksThree}}
 	{{> donate}}
-	</section>
+	<!-- </div> -->
 </template>
 
