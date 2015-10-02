@@ -1,50 +1,90 @@
-.share-links {
-  z-index: 0;
-  display: inline-block;
+.sub-header {
+  font-weight: 600;
+  font-size: 1.5em;
   padding: 15px;
 }
 
-.share-icons {
-  background-size: 60px;
-  height: 60px;
-  width: 60px;
-}
-
-.share-icons:hover {
-  transition: 0.1s;
-}
-
-.project-container {
-  text-align: center;
-}
-
-.project-image {
-  background: black;
+.works-container {
   width: 100%;
-}
-
-.project {
-  display: inline-block;
-  float: none;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
-}
-
-.fake-padding {
-  display: inline-block;
-  float: none;
-  width: 30px;
-}
-
-#facebook-button {
   position: relative;
-  background-image: url("img/facebook-circle-filled-icon.png");
-  background-repeat: no-repeat;
+  background-color: #59b390;
+  background-size: cover;
 }
 
-#twitter-button {
+.works-content {
+  position: absolute;
+  z-index: 100;
+  font-size: 0;
+}
+
+.works-content h1 {
+  padding-bottom: 30px;
+}
+
+.works-section {
+  display: inline-block;
+  vertical-align: top;
+  width: 28%;
+}
+
+.sub-image {
+  height: 100px;
+  display: block;
   position: relative;
-  background-image: url("img/twitter-circle-blue-filled-icon.png");
-  background-repeat: no-repeat;
+  padding: 15px;
+}
+
+.third-columns h4 {
+  font-size: 1.5em;
+}
+
+.third-columns .button-green {
+  border-color: white;
+}
+
+.works-blurb {
+  font-size: 1.2em;
+  width: 65%;
+  line-height: 1.5;
+  color: white;
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+  .third-columns {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+/* Larger than phablet */
+@media (min-width: 550px) {
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .third-columns {
+    width: 33.33333%;
+    height: 355px;
+    font-size: 12px;
+  }
+/*  #register, #share, #email {
+    background-image: url("");
+    background-color: #f6f6f6;
+  }*/
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  .third-columns {
+    height: 410px;
+    font-size: 16px;
+  }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+  .third-columns {
+    height: 460px;
+    font-size: 20px;
+  }
 }

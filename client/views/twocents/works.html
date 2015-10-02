@@ -1,47 +1,37 @@
 <template name="works">
-	<div class="works-container">
-		<div class="works-content">
-			<center>
-				<h1 class="white-text top-buffer center">How It Works</h1>
-				<div class="white-text">
-					<!-- Register -->
-					<div class="third-columns" id="register">
-						<h4>Register to be a donor</h4>
-						<br>
-						<div class="icons-mask">
-							<img class="desaturate" src="img/donate-icon-white-3.png">
-						</div>
-						<p class="works-blurb">
-						All of your two cents a day donations will go directly toward contributing to issues our world faces today.</p>
-						<br>
-						<label class="button button-white big-button" for="modal-one">Donate Now</label>
-					</div>
-
-					<!-- Share -->
-					<div class="third-columns" id="share">
-						<h4> Share with friends and family</h4>
-						<br>
-						<div class="icons-mask">
-							<img class="desaturate" src="img/share-icon-white.png">
-						</div>
-						<p class="works-blurb">
-						We can use the strength in numbers to turn your pocket change donations into larger meaningful contributions. </p>
-						<br>
-						{{> share}}
-					</div>
-
-					<!-- Sit back and relax -->
-					<div class="third-columns" id="email">
-						<h4>Sit back and relax</h4>
-						<br>
-						<div class="icons-mask">
-							<img class="desaturate" src="img/email-icon-white.png">
-						</div>
-						<p class="works-blurb">
-						We will send you updates over email every time we reach a goal. Your wallet won’t notice a difference, but the world will. </p>
-					</div>
+	<div class="works-container half-top-buffer half-bottom-buffer">
+		<center>
+			<h1 class="white-text section-header half-bottom-buffer">How It Works</h1>
+			<div class="white-text">
+				<!-- Register -->
+				<div class="works-section">
+					<img class="sub-image" src="img/logo-white.png">
+					<div class="sub-header">Simple Donations</div>
+					<p class="works-blurb">
+					You’ll give two cents a day (charged as $1 every fifty days) to provide help to our world’s biggest problems.</p>
 				</div>
-			</center>
-		</div>
+
+				<!-- Share -->
+				<div class="works-section">
+					<!-- <img class="sub-image" src="img/network.png"> -->
+					<img class="sub-image" src="img/hand-heart.png">
+					<div class="sub-header">Strength Together</div>
+					<p class="works-blurb">
+					Share with you friends and family to help make two cents mean
+					more for everyone</p>
+					<div class="half-top-buffer"></div>
+					<label class="button button-white big-button" for="modal-one">Learn More</label>
+				</div>
+
+				<!-- Sit back and relax -->
+				<div class="works-section">
+					<!-- <img class="sub-image" src="img/hand-heart.png"> -->
+					<img class="sub-image" src="img/world-white.png">
+					<div class="sub-header">Continuous Generosity</div>
+					<p class="works-blurb">
+					With two cents from millions of people coming in every day, we'll have the ability to provide recurring donations around the world. </p>
+				</div>
+			</div>
+		</center>
 	</div>
 </template>

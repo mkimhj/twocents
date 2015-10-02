@@ -23,8 +23,21 @@ body {
   font-family: "Proxima Nova", "Avenir", sans-serif;
 }
 
+.section-header {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: black;
+}
+
 .gray-background {
   background-color: #f9f9f9;
+}
+
+.partner {
+  padding: 20px 0px;
+  display: inline-block;
+  width: 16%;
+  height: 80px;
 }
 
 .green-inline {
@@ -51,6 +64,13 @@ body {
   color: #39BAFF;
 }
 
+.mission-statement {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 1.5;
+  color: #696d71;
+}
+
 .button, #submit-button, #submit-paypal-button {
   margin-bottom: 0px;
   font-weight: 500;
@@ -61,6 +81,11 @@ body {
 .button-white {
   border: 2px solid #fff  ;
   color: white;
+
+  -webkit-transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+  -moz-transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+  -o-transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease;
 }
 
 .button-black {
@@ -80,6 +105,10 @@ body {
   background-color: white;
   color: #59b390;
   border: 2px solid #fff;
+  -webkit-transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+  -moz-transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+  -o-transition: color .15s ease, background-color .15s ease, border-color .15s ease;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease;
 }
 
 .big-button {
@@ -144,13 +173,6 @@ img {
   background: #FFFFFF;
 }
 
-.section-header {
-  /*font-size: 70;*/
-  /*font-family: "HelveticaNeue-UltraLight", Helvetica, sans-serif;*/
-  /*letter-spacing: 0.2rem;*/
-  margin-bottom: 10px;
-  color: black;
-}
 
 .section-paragraph {
   font-size: 20px;
