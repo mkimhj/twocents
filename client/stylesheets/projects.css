@@ -16,25 +16,55 @@
 
 .project-container {
   text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;;
+}
+
+.project-image-container {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    height: 300px;
+    width: 300px;
+    background-color: black;
 }
 
 .project-image {
-  background: black;
+    flex-shrink:0;
+    min-width:100%;
+    min-height:100%;
+}
+
+.tall {
   width: 100%;
 }
 
-.project {
-  display: inline-block;
-  float: none;
-  vertical-align: middle;
-  width: 33%;
-  height: 33%;
-  max-height: 320px;
-  max-width: 320px;
-  padding: 0px 50px;
+.wide {
+  height: 100%;
 }
 
-.small-project {
+.project {
+  display: inline;
+  float: none;
+  vertical-align: middle;
+  max-height: 300px;
+  max-width: 300px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  padding: 50px 50px;
+}
+
+/*.small-project {
   display: inline-block;
   float: none;
   vertical-align: middle;
@@ -43,7 +73,7 @@
   max-width: 240px;
   max-height: 240px;
 }
-
+*/
 
 .fake-padding {
   display: inline-block;
