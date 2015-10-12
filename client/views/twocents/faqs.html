@@ -7,16 +7,16 @@
 			</center>
 		</div>
 	</div>
-	<div class="container top-buffer">
-		<h4>
+	<div class="container faq-container">
+		<!-- <h3>Frequently Asked Questions</h3><br> -->
+		<h5>
 			<ul class="qa-list">
 				{{#each questions}}
 				<li class="question">{{question}}
-					<div class="answer hide"><h5>A:  {{answer}}</h5></div>
+					<div class="answer hide"><p>{{answer}}</p></div>
 				</li>
 				{{/each}}
 			</ul>
-		</h4>
+		</h5>
 	</div>
-	<div class="bottom-buffer"></div>
 </template>

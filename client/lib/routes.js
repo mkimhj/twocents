@@ -15,6 +15,11 @@ Router.route('/about', function () {
 	window.scrollTo(0, 0);
 });
 
+Router.route('/blog', function () {
+	this.render('blog');
+	window.scrollTo(0, 0);
+});
+
 Router.route('/legal', function() {
 	this.render('legal');
 	window.scrollTo(0,0);

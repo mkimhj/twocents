@@ -1,4 +1,37 @@
 <template name="about">
-	{{> story}}
-	{{> team}}
+	<div class="about-banner">
+		<div class="about-overlay"></div>
+		<div class="container">
+			<center>
+				<h1 class="white-text banner-title">About Us</h1>
+			</center>
+		</div>
+	</div>
+	<div class="mission-container">
+		<div class="container">
+			<div class="six columns">
+				<h4>Our Mission</h4>
+				<br>
+				<div class="about-text">
+					<p>
+					By starting donations at two cents a day, we hope that the act of giving becomes accessible to millions of ordinary people.  By capitalizing on the strength in numbers, we believe we can transform everyone's pocket change to make a difference around the world.
+					<br><br><br>
+					Give your two cents, spread the word, and help change the world.
+					</p>
+				</div>
+			</div>
+	    	<div class="six columns">
+	    		<h4>Who We Are</h4>
+	    		<br>
+	    		<div class="about-text">
+		    		<p>
+		    		Two Cents was established in Berkeley, California by four recent UC Berkeley graduates. The idea started as a concept for the first annual CITRIS Mobile App Challenge, and since then has transformed into a simple and recurring donation platform. We love serving the communities closest to us; and today, we’re striving to create and engineer Two Cents -- something that we believe will make a tangible and meaningful difference around the world.
+					</p>
+				</div>
+	    	</div>
+		</div>
+	</div>
+	<div class="team-container">
+		{{> team}}
+	</div>
 </template>

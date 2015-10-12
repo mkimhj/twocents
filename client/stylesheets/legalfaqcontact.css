@@ -2,29 +2,30 @@
   bottom: 0;
   height: 50vh;
   width: 100%;
-  background-image: url("http://shr-consulting.com/wp-content/uploads/2014/06/Question-marks-1.jpg");
+  background-image: url("img/faq-banner-color.jpg");
   background-size: 100%;
-  background-position: center;
+  background-position: 100% 60%;
   background-repeat: no-repeat;
   position: relative;
 }
 
 .faq-overlay {
-  opacity: .65;
+  background-color: black;
+  opacity: .2;
   position: absolute;
   bottom: 0px;
   width: 100%;
   height: 50vh;
-  background: -webkit-linear-gradient(left top, purple , MediumSlateBlue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, purple, MediumSlateBlue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, purple, MediumSlateBlue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, purple , MediumSlateBlue); /* Standard syntax */
+}
+
+.faq-container {
+  padding: 100px;
 }
 
 .banner-title {
   display: block;
   padding-top: 20vh;
-  text-shadow: 0px 0px 30px black;
+  font-weight: bold;
 }
 
 .answer {
@@ -33,6 +34,8 @@
   padding-left: 30px;
   cursor: default;
   font-weight: normal;
+  font-size: 18px;
+  color: gray;
 }
 
 .question {
@@ -41,38 +44,41 @@
 
 .qa-list {
   line-height: 1.5;
+  color: #59b390;
+}
+
+.question:hover {
+  color: black;
+  transition: 0.35s;
 }
 
 .legal-banner {
   bottom: 0;
   height: 50vh;
   width: 100%;
-  background-image: url("http://media.coindesk.com/2013/08/legal.jpg");
+  background-image: url("img/legal-banner-2.jpg");
   background-size: 100%;
-  background-position: center;
+  background-position: 100% 30%;
   background-repeat: no-repeat;
   position: relative;
 }
 
 .legal-overlay {
-  opacity: .65;
+  background-color: black;
+  opacity: .15;
   position: absolute;
   bottom: 0px;
   width: 100%;
   height: 50vh;
-  background: -webkit-linear-gradient(left top,  crimson, brown); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, crimson, brown); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, crimson, brown); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right,  crimson, brown); /* Standard syntax */
 }
 
 .contact-banner {
   bottom: 0;
   height: 50vh;
   width: 100%;
-  background-image: url("https://officetelephoneservices.files.wordpress.com/2015/02/3.jpg");
+  background-image: url("img/contactus-banner.jpg");
   background-size: 100%;
-  background-position:50% 65%;
+  background-position:50% 67%;
   background-repeat: no-repeat;
   position: relative;
 /*  -webkit-filter: blur(5px);
@@ -83,18 +89,26 @@
 }
 
 .contact-overlay {
-  opacity: .65;
+  background-color: black;
+  opacity: .2;
   position: absolute;
   bottom: 0px;
   width: 100%;
   height: 50vh;
-  background: -webkit-linear-gradient(left top,  green, dodgerblue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, green, dodgerblue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, green, dodgerblue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right,  green, dodgerblue); /* Standard syntax */
 }
 
 .contact-info {
-  padding: 30px 0px 150px 0;
-  font-size: 20px;
+  padding: 100px 400px 100px 400px;
+}
+
+.contact-icons {
+  display: block;
+}
+
+#contact-links {
+  display: inherit;
+  margin-left: 40px;
+  margin-top: -35px;
+  text-decoration: none;
+  color: gray;
 }
