@@ -22,3 +22,5 @@ aldeed:console-me
 cmather:handlebars-server
 iron:router
 mrt:facebook-sdk
+accounts-password
+accounts-ui-unstyled

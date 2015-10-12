@@ -1,0 +1,69 @@
+#login-sign-in-link {
+	display: none;
+}
+
+.login-close-text {
+	display: none;
+}
+
+.login-button, .logout-button {
+	background-color: #59b390;
+    width: 200px;
+    padding: 10px 0px;
+    color: white;
+}
+
+.additional-link-container {
+	margin:10px;
+	background-color: #59b390;
+    width: 200px;
+    padding: 10px 0px;
+}
+
+.additional-link {
+    color: white;
+}
+
+.login-button:hover {
+	cursor:pointer;
+	background-color: #79d3B0;
+}
+
+.additional-link-container:hover {
+	cursor:pointer;
+	background-color: #79d3b0;
+}
+
+.additional-link:hover {
+	color: white;
+}
+
+.logout-button:hover {
+	cursor: pointer;
+	color: white;
+	background-color: #79d3b0;
+}
+
+._id {
+	display: none;
+}
+
+.removeButton {
+	background-color: #fc5458;
+	color: white;
+	border-radius: 100px;
+	line-height: 1;
+	width: 20px;
+	height: 20px;
+	font-size: 10px;
+	line-height: 2;
+}
+
+.removeButton:hover {
+	cursor:pointer;
+}
+
+td {
+	max-width: 300px;
+	word-wrap: break-word;
+}

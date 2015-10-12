@@ -1,0 +1,21 @@
+.pocket {
+  width: 20vh;
+  margin-left: -1.5%;
+  padding: 40px;
+}
+
+.mission-statement a {
+  text-decoration: none;
+  color: #696d71;
+}
+
+.mission-statement a:hover {
+  color: #39BAFF;
+}
+
+.mission-statement {
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 1.5;
+  color: #696d71;
+}

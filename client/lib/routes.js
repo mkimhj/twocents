@@ -4,6 +4,12 @@ Router.route('/', function() {
 	window.scrollTo(0, 0);
 });
 
+Router.route('/login', function() {
+	this.layout('BlankLayout');
+	this.render('login');
+	window.scrollTo(0, 0);
+})
+
 Router.route('/dev', function() {
 	this.render('index');
 	YT.load();

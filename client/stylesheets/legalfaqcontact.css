@@ -105,6 +105,11 @@
   display: block;
 }
 
+.contact-icons img {
+  width: 100%;
+  height: 100%;
+}
+
 #contact-links {
   display: inherit;
   margin-left: 40px;

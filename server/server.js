@@ -1,4 +1,4 @@
-Users = new Mongo.Collection("users");
+Donors = new Mongo.Collection("donors");
 var gateway;
 
 //Code that runs on startup.
@@ -24,12 +24,16 @@ Meteor.startup(function () {
     });
   }
 
-
   // Stripe Setup
   Stripe = StripeAPI(Meteor.settings.STRIPE_SECRET_KEY);
 
   // Sendgrid Setup
   process.env.MAIL_URL = Meteor.settings.SENDGRID_SMTP_URL;
+
+  // Publish nonprofit projects
+  Meteor.publish('projects', function() {
+    return Projects.find({});
+  });
 });
 
 Meteor.methods({
@@ -56,7 +60,7 @@ Meteor.methods({
 
     if (success) {
       // Insert user into database to ensure no duplicates exist in the future.
-      Users.insert({
+      Donors.insert({
         stripeToken: token,
         name: name,
         email: address,
@@ -70,7 +74,7 @@ Meteor.methods({
 
   // Method to prevent duplicate users
   checkEmail: function(email) {
-    var userObject = Users.find({email: email}, {limit:1}).fetch();
+    var userObject = Donors.find({email: email}, {limit:1}).fetch();
     var userExists = (typeof userObject !== 'undefined' && userObject.length > 0);
 
     if (userExists) {
@@ -80,7 +84,7 @@ Meteor.methods({
     }
   },
 
-  // Method to create a new paypal token 
+  // Method to create a new paypal token
   getPaypalClientToken: function (clientId) {
     var generateToken = Meteor.wrapAsync(gateway.clientToken.generate, gateway.clientToken);
     var options = {};
@@ -111,13 +115,13 @@ Meteor.methods({
               id: customer.paypalAccounts[0].token,
               paymentMethodToken: customer.paypalAccounts[0].token,
               planId : "b7tb"
-            };       
+            };
 
             // Create the new subscription
             newSubscription(subscriptionRequest, function(err, result) {});
 
             // Insert user into database to ensure no duplicates exist in the future.
-            Users.insert({
+            Donors.insert({
               paypalToken: subscriptionRequest.id,
               name: customer.firstName,
               email: customer.email,
@@ -160,6 +164,38 @@ Meteor.methods({
     });
 
     console.log(String(Meteor.settings.IFTTT_ENDPOINT).concat(String(email)));
+  },
+
+  insertProject: function(id, organizationName, projectName, projectDescription, imageUrl, fundsRaised, fundsRequired, targetDate, dateFormatted) {
+      if (id) {
+        //find and update
+        Projects.update(
+          {_id: id},
+          {$set:{organization:organizationName,
+                 project: projectName,
+                 description: projectDescription,
+                 image: imageUrl,
+                 fundsRaised: fundsRaised,
+                 fundsRequired: fundsRequired,
+                 targetDate: targetDate,
+                 dateFormatted: dateFormatted}});
+      } else {
+        //insert
+        Projects.insert({
+          organization: organizationName,
+          project: projectName,
+          description: projectDescription,
+          image: imageUrl,
+          fundsRaised: fundsRaised,
+          fundsRequired: fundsRequired,
+          targetDate: targetDate,
+          dateFormatted: dateFormatted
+        });
+      }
+  },
+
+  removeProject: function(id) {
+    Projects.remove(id);
   }
 });
 

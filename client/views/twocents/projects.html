@@ -8,27 +8,42 @@
 				</p>
 			</center>
 
-			<div class="project-container half-top-buffer half-bottom-buffer">
-					<div id="past-project" class="small-project">
-						<div class="project-title">Next Project Title</div>
-						<div class="project-image"></div>
-						<div class="project-status green-inline">$10,000</div>
-						<div class="project-donations">2,756 Donations</div>
+			<div class="project-container">
+					{{#each projects}}
+					<div class="project">
+						<div class="project-title">{{project}}</div>
+						<div class="project-hidden">
+							<div class="black-overlay"></div>
+							<div class="project-hidden-content">
+								<div class="white-text italic">Organization</div>
+								<div class="white-text project-org">{{organization}}</div>
+								<label class="button button-white big-button" for="{{_id}}">Read More</label>
+							</div>
+						</div>
+						<div class="project-image-container">
+							<img class="project-image" src="{{image}}"/>
+						</div>
+						<div class="project-status green-inline">${{fundsRaised}}/${{fundsRequired}}</div>
+						<div class="project-donations">x Donations</div>
 					</div>
-					<div class="fake-padding"></div>
-					<div id="current-project" class="project">
-						<div class="project-title">Current Project Title</div>
-						<div class="project-image"></div>
-						<div class="project-status green-inline">$89,450.08/$100,000</div>
-						<div class="project-donations">6,321 Donations</div>
+
+					<div class="modal">
+						<input style="display:none" class="modal-open" id="{{_id}}" type="checkbox" hidden>
+					  	<div class="modal-wrap" aria-hidden="true" role="dialog">
+					    	<label class="modal-overlay" for="{{_id}}"></label>
+					    	<div class="modal-dialog">
+						      	<div class="modal-header">
+						        	<h2>{{project}}</h2>
+						        	<label class="btn-close" for="{{_id}}" aria-hidden="true">× </label>
+						      	</div>
+						      	<div class="modal-body">
+								  	<div class="modal-footer">
+								  	</div>
+						      	</div>
+					    	</div>
+					  	</div>
 					</div>
-					<div class="fake-padding"></div>
-					<div id="next-project" class="small-project">
-						<div class="project-title">Completed Project Title</div>
-						<div class="project-image"></div>
-						<div class="project-status green-inline">$1,000/$1,000</div>
-						<div class="project-donations">1 Donation</div>
-					</div>
+					{{/each}}
 			</div>
 	</div>
 </template>

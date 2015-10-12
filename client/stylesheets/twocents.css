@@ -5,8 +5,7 @@ del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
+fieldset, form, label, legend, caption,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
@@ -34,10 +33,10 @@ body {
 }
 
 .partner {
-  padding: 20px 0px;
+  padding: 2vh 0px;
   display: inline-block;
   width: 16%;
-  height: 80px;
+  height: 8vh;
 }
 
 .green-inline {
@@ -49,33 +48,21 @@ body {
   display: inline-block;
 }
 
-.pocket {
-  width: 20vh;
-  margin-left: -1.5%;
-  padding: 40px;
-}
-
-.mission-statement a {
-  text-decoration: none;
-  color: #696d71;
-}
-
-.mission-statement a:hover {
-  color: #39BAFF;
-}
-
-.mission-statement {
-  font-size: 18px;
-  font-weight: lighter;
-  line-height: 1.5;
-  color: #696d71;
-}
-
 .button, #submit-button, #submit-paypal-button {
   margin-bottom: 0px;
   font-weight: 500;
   color: white;
   border-radius: 0px;
+}
+
+#submit-button, #submit-paypal-button {
+  background-color: #59b390;
+  border-color: #59b390;
+}
+
+#submit-button:hover, #submit-paypal-button:hover {
+  background-color: #69c3A0;
+  border-color: #69C3A0;
 }
 
 .button-white {
@@ -117,6 +104,7 @@ body {
   font-size: 15px;
   line-height: 45px;
   margin: 5px;
+  border-radius: 2px;
 }
 
 
@@ -160,7 +148,7 @@ a,
   letter-spacing: normal;
 }
 
-img {
+.partner img {
   max-width:100%;
   max-height:100%;
 }
@@ -172,7 +160,6 @@ img {
 .white {
   background: #FFFFFF;
 }
-
 
 .section-paragraph {
   font-size: 20px;
@@ -198,64 +185,6 @@ img {
 
 .normal {
   font-weight: normal;
-}
-
-/*Modal Stuff*/
-#modal-one, #modal-two {
-  display: none;
-}
-
-.brandingLogoView{
-  position: fixed;
-  left: 14px;
-  bottom: 14px;
-  background-image: url("img/powered-by-stripe.png");
-  background-size: 100% 100%;
-  width: 123px;
-  height: 30px;
-}
-
-.btn-close {
-  padding-right: 10px;
-}
-
-.loader {
-  margin: 6em auto;
-  font-size: 10px;
-  position: relative;
-  text-indent: -9999em;
-  border-top: 1.1em solid rgba(200, 200, 200, 0.2);
-  border-right: 1.1em solid rgba(200, 200, 200, 0.2);
-  border-bottom: 1.1em solid rgba(200, 200, 200, 0.2);
-  border-left: 1.1em solid #33C3F0;
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
-}
-.loader,
-.loader:after {
-  border-radius: 50%;
-  width: 10em;
-  height: 10em;
-}
-@-webkit-keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes load8 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
 }
 
 .hide {

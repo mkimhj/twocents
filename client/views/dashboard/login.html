@@ -1,0 +1,56 @@
+<template name="login">
+	{{#if currentUser}}
+		<div class="dashboard-container half-top-buffer container">
+			<div class="row">
+				<h1 class="u-pull-left">Projects Dashboard</h1>
+				<center>
+					<a data-logout class="item u-pull-right logout-button">Logout</a>
+				</center>
+			</div>
+			<table class="u-full-width">
+			  <thead>
+			    <tr>
+			      <th>Organization</th>
+			      <th>Project Name</th>
+			      <th>Description</th>
+			      <th>Image URL</th>
+			      <th>Funds Raised</th>
+			      <th>Funds Required</th>
+			      <th>Target Date</th>
+			      <th></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	{{#each projects}}
+			  	<tr class="projectRow">
+			  	  <div class="_id">{{_id}}</div>
+			      <td class="organizationName" contentEditable="true">{{organization}}</td>
+			      <td class="projectName" contentEditable="true">{{project}}</td>
+			      <td class="projectDescription" contentEditable="true">{{description}}</td>
+			      <td class="imageUrl" contentEditable="true">{{image}}</td>
+			      <td class="fundsRaised" contentEditable="true">{{fundsRaised}}</td>
+			      <td class="fundsRequired" contentEditable="true">{{fundsRequired}}</td>
+			      <td class="targetDate" contentEditable="true">{{targetDate}}</td>
+			      <td><center><div class="removeButton {{_id}}"><center>X</center></div></center></td>
+			    </tr>
+			    {{/each}}
+			    <tr class="projectRow">
+			      <td class="organizationName" contentEditable="true"></td>
+			      <td class="projectName" contentEditable="true"></td>
+			      <td class="projectDescription" contentEditable="true"></td>
+			      <td class="imageUrl" contentEditable="true"></td>
+			      <td class="fundsRaised" contentEditable="true"></td>
+			      <td class="fundsRequired" contentEditable="true"></td>
+			      <td class="targetDate" contentEditable="true"></td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	{{else}}
+	<center>
+		<div id="login-screen" class="top-buffer">
+			{{> loginButtons}}
+		</div>
+	</center>
+	{{/if}}
+</template>

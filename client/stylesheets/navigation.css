@@ -3,11 +3,25 @@
   margin: auto;
 }
 
+.logo-background {
+  background: url("img/two-cents-white.png") center no-repeat;
+  display: block;
+  padding: 18px 0px 18px 0px;
+  line-height: 20px;
+  color: black;
+}
+
+#navbar-signup-button {
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 0px 15px;
+}
+
 #navigation {
   z-index: 1000;
-  background: rgba(235, 235, 235, 0.75);
+  background: rgba(235, 235, 235, 0);
   opacity: 1.0;
-  position: fixed;
+  position: absolute;
   height: 78px;
   top: 0;
   left: 0;
@@ -22,14 +36,12 @@
     display: inline-block;
     margin: 0; }
     #navigation li a {
-      background: url("img/two-cents-white.png") center no-repeat;
       display: block;
-      padding: 18px 0px 18px 0px;
       line-height: 20px;
-      color: black; }
+      color: white; }
     #navigation li.logo-nav {
       text-transform: uppercase;
-      font-size: 20px;
+      font-size: 23px;
       font-weight: bold;
       text-decoration: none; }
     #navigation li.logo-nav a {
@@ -43,10 +55,12 @@
     #navigation li.nav-item a {
       font: normal 14px "Proxima Nova", sans-serif;
       letter-spacing: 0.1em;
+      padding: 13px;
       text-transform: uppercase;
       text-decoration: none; }
       #navigation li.nav-item a:hover {
-        color: #39BAFF; }
+        font-weight: bold;
+      }
 
 footer {
 /*  background-image:
