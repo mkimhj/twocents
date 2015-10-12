@@ -8,15 +8,40 @@
 				</p>
 			</center>
 
-			<div class="project-container half-top-buffer half-bottom-buffer">
+			<div class="project-container">
 					{{#each projects}}
-					<div id="{{_id}}" class="project">
+					<div class="project">
 						<div class="project-title">{{project}}</div>
+						<div class="project-hidden">
+							<div class="black-overlay"></div>
+							<div class="project-hidden-content">
+								<div class="white-text italic">Organization</div>
+								<div class="white-text project-org">{{organization}}</div>
+								<label class="button button-white big-button" for="{{_id}}">Read More</label>
+							</div>
+						</div>
 						<div class="project-image-container">
 							<img class="project-image" src="{{image}}"/>
 						</div>
 						<div class="project-status green-inline">${{fundsRaised}}/${{fundsRequired}}</div>
 						<div class="project-donations">x Donations</div>
+					</div>
+
+					<div class="modal">
+						<input style="display:none" class="modal-open" id="{{_id}}" type="checkbox" hidden>
+					  	<div class="modal-wrap" aria-hidden="true" role="dialog">
+					    	<label class="modal-overlay" for="{{_id}}"></label>
+					    	<div class="modal-dialog">
+						      	<div class="modal-header">
+						        	<h2>{{project}}</h2>
+						        	<label class="btn-close" for="{{_id}}" aria-hidden="true">× </label>
+						      	</div>
+						      	<div class="modal-body">
+								  	<div class="modal-footer">
+								  	</div>
+						      	</div>
+					    	</div>
+					  	</div>
 					</div>
 					{{/each}}
 			</div>
