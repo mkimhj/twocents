@@ -94,6 +94,24 @@
   font-size: 20px;
   margin: 0;
 }
+
+.modal-description {
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 12px;
+  color: gray;
+}
+
+.modal-registration-complete {
+  font-weight: 300;
+  padding-bottom: 12px;
+}
+
+.modal-registration-complete img {
+  width: 80px;
+  height: 80px;
+}
+
 .modal-footer {
   border-top: #eaeaea solid 1px;
   text-align: right;

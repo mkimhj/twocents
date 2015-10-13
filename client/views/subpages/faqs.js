@@ -12,7 +12,7 @@ var QAList = [
 			 answer: "We’re working on our 501(c)3 status.  We will keep you in the loop with our status, and notify you once your donations are tax deductible."},
 
 			{question: "How much of my daily donations will reach the nonprofit?", 
-			 answer: "Everything. By partnering with our payment processor, Stripe, we have zero transaction fees on credit cards."},
+			 answer: "100% Everything. By partnering with our payment processor, Stripe, we have zero transaction fees on credit cards."},
 
 			{question: "How do I send feedback?", 
 			 answer: "You can always send us feedback at hello@twocentsaday.com"},
@@ -26,6 +26,9 @@ var QAList = [
 			{question: "Will there be more partnered nonprofits?", 
 			 answer: "Of course! Any nonprofit organization that meets our criteria for partnership will be a friendly addition to the growth of our movement."},
 
+			{question: "What if registered donors want to support and fund other nonprofits?", 
+			 answer: "This is great! We would love to hear what interests are with respect to nonprofits, and the causes that you support.  Please send us your feedback and thoughts regarding this at outreach@twocentsaday.com and we will move forward from there."},
+
 			{question: "What if we have physical pocket change donations?", 
 			 answer: "Don’t let it collect dust! Bring it with you next time you’re out and donate it to a homeless person."},
 
@@ -34,6 +37,9 @@ var QAList = [
 
 			{question: "Is there a Two Cents mobile app?",
 			 answer: "No.  Two Cents is only a web app."},
+
+			 {question: "Can I unsubscribe as a donor?",
+			 answer: "If you would like to unsubscribe as a donor, please email us at info@twocentsaday.com, and we will remove you as a registered donor.  It would be extremely helpful for the future of Two Cents if you could provide us with your personal experience and feedback."},
 		  ];
 
 Template.faqs.helpers({
