@@ -90,7 +90,7 @@
 
 .contact-overlay {
   background-color: black;
-  opacity: .2;
+  opacity: .3;
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -115,5 +115,5 @@
   margin-left: 40px;
   margin-top: -35px;
   text-decoration: none;
-  color: gray;
+  color: #0F0F0F;
 }

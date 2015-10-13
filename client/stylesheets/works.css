@@ -50,6 +50,21 @@
   color: white;
 }
 
+.learn-more {
+  font-size: 15px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 2px;
+  width: 150px;
+}
+
+.learn-more a {
+  text-decoration: none;
+  color: white;
+}
+
 /* Larger than mobile */
 @media (min-width: 400px) {
   .third-columns {

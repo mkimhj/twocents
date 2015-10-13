@@ -41,6 +41,11 @@ Router.route('/faqs', function() {
 	window.scrollTo(0,0);
 });
 
+// Router.route('/emailTemplate', function() {
+// 	this.render('emailTemplate');
+// 	window.scrollTo(0,0);
+// });
+
 Router.configure({
   layoutTemplate: 'ApplicationLayout'
 });

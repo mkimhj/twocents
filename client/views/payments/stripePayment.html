@@ -7,12 +7,23 @@
 
 	    <div class="modal-dialog">
 	      <div class="modal-header">
-	        <h2>Two Cents Donation ($1 every 50 days)</h2>
+	        <h2>Two Cents Donor Registration</h2>
+	        <p class="{{#if submitted}}hide{{else}}show{{/if}} modal-description">Your two cents a day donation is equivalent to $1 every 50 days; $1 will the be charged to your credit card every 50 days, with no transaction fees. 100% of your donations goes directly to our partnered nonprofits.</p>
 	        <label class="btn-close" for="modal-one" aria-hidden="true">× </label>
 	      </div>
 	      <div class="modal-body">
-			<div class="{{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up!</p></div>
-			<div class="{{#if success}}show{{else}}hide{{/if}}">Success! Thanks, your donations will help save the world.</div>
+			<div class="{{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up ... </p></div>
+			<div class="{{#if success}}show{{else}}hide{{/if}}">
+				<center class="modal-registration-complete">
+				<img src="img/twocents.png"><br>
+				Your donor registration was a success! You will receive a confirmation email from us shortly.  Thank you for making a difference and giving your two cents a day. <br><br>
+
+				If you have any questions, feel free to contact us at <a href="mailto:hello@twocentsaday.com">hello@twocentsaday.com</a>. <br>
+
+				You can find us on: 
+				<a href="https://www.facebook.com/twocentsaday">Facebook</a> | <a href="http://twitter.com/twocentsaday_">Twitter</a>
+				</center>
+			</div>
 			<form id='donation-form' class="{{#if submitted}}hide{{else}}show{{/if}}">
 			  <div class="row">
 			    <div class="six columns">

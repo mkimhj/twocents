@@ -220,3 +220,8 @@ a,
   background-image: url("img/twitter-circle-blue-filled-icon.png");
   background-repeat: no-repeat;
 }
+
+.copyright {
+  color: gray;
+  font-size: 12px;
+}
