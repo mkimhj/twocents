@@ -34,4 +34,10 @@ $(function() {
 // fade in window
 $(window).load(function(){
   $("#fader").fadeOut(200);
+
+  // // Determine aspect ratio of projects
+  // $('.project-container').find('img').each(function(){
+  // var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
+  // $(this).addClass(imgClass);
+  // });
 });

@@ -12,15 +12,7 @@
 		      	<div class="modal-body">
 					<div class="{{#if paypalSuccess}}hide{{else}}{{#if paypalSubmitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up ... </p></div>
 					<div class="{{#if paypalSuccess}}show{{else}}hide{{/if}}">
-						<center class="modal-registration-complete">
-						<img src="img/twocents.png"><br>
-						Your donor registration was a success! You will receive a confirmation email from us shortly.  Thank you for making a difference and giving your two cents a day. <br><br>
-
-						If you have any questions, feel free to contact us at <a href="mailto:hello@twocentsaday.com">hello@twocentsaday.com</a>. <br>
-
-						You can find us on: 
-						<a href="https://www.facebook.com/twocentsaday">Facebook</a> | <a href="http://twitter.com/twocentsaday_">Twitter</a>
-						</center>
+					{{>registrationComplete}}
 					</div>
 					<form id='paypal-form' class="{{#if paypalSubmitted}}hide{{else}}show{{/if}}">
 					  	<div class="row">

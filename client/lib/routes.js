@@ -1,5 +1,5 @@
 Router.route('/', function() {
-	this.render('temp');
+	this.render('index');
 	YT.load();
 	window.scrollTo(0, 0);
 });

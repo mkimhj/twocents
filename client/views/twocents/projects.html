@@ -20,15 +20,15 @@
 							</div>
 						</div>
 						<div class="project-image-container">
-							<img class="project-image" src="{{image}}"/>
+							<img class="project-image wide" src="{{image}}"/>
 						</div>
 						<div class="project-text-container">
 							<div class="project-title">{{project}}</div>
 							<div class="organization-title">{{organization}}</div>
 							<progress max="{{fundsRequired}}" value="{{fundsRaised}}"></progress>
-							<div class="percent-text inline project-stat"><div class="weight-600">50%</div><div class="weight-300">funded</div></div>
+							<div class="percent-text inline project-stat"><div class="weight-600">1%</div><div class="weight-300">funded</div></div>
 							<div class="percent-text inline project-stat"><div class="weight-600">${{fundsRaised}}</div><div class="weight-300">raised</div></div>
-							<div class="percent-text inline project-stat"><div class="weight-600">500</div><div class="weight-300">donations</div></div>
+							<div class="percent-text inline project-stat"><div class="weight-600">12</div><div class="weight-300">donations</div></div>
 						</div>
 					</div>
 
@@ -55,14 +55,16 @@
 							      			<div class="big-stat weight-600">${{fundsRaised}}</div>
 							      			<div class="stat-line weight-300">reached of ${{fundsRequired}} goal</div>
 							      			<br>
-								      		<div class="big-stat weight-600">500</div>
+								      		<div class="big-stat weight-600">12</div>
 								      		<div class="stat-line weight-300">donations received</div>
 										</div>
 									</div>
 
 						      		<progress max="{{fundsRequired}}" value="{{fundsRaised}}"></progress>
+						      		<div class="project-modal-description">
 						      		{{description}}
-								  	<div class="modal-footer">{{organization}}</div>
+						      		</div>
+								  	<!-- <div class="modal-footer">{{organization}}</div> -->
 						      	</div>
 					    	</div>
 					  	</div>

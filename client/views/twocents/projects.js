@@ -1,14 +1,3 @@
-$(window).load(function(){
- $('.project-container').find('img').each(function(){
-  var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
-  $(this).addClass(imgClass);
- })
-})
-
-Template.projects.rendered = function() {
-  //subscribe to only a subset later
-};
-
 Meteor.subscribe('projects');
 
 Template.projects.events({
