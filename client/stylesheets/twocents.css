@@ -22,6 +22,20 @@ body {
   font-family: "Proxima Nova", "Avenir", sans-serif;
 }
 
+.green-button {
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 0px 18px;
+  background-color: #49a380;
+  border: none;
+  border-radius: 3px;
+}
+
+.green-button:hover {
+  color: white;
+  background-color: #69c3a0;
+}
+
 .section-header {
   text-transform: uppercase;
   font-weight: 600;
@@ -104,7 +118,7 @@ body {
   font-size: 15px;
   line-height: 45px;
   margin: 5px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 

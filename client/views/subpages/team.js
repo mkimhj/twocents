@@ -1,4 +1,4 @@
-var fadeSpeed = 300;
+var fadeSpeed = 200;
 
 Template.team.events({
 	'mouseenter #maruchi-pic': function(event) {

@@ -11,7 +11,6 @@
 			<div class="project-container">
 					{{#each projects}}
 					<div class="project">
-						<div class="project-title">{{project}}</div>
 						<div class="project-hidden">
 							<div class="black-overlay"></div>
 							<div class="project-hidden-content">
@@ -23,8 +22,14 @@
 						<div class="project-image-container">
 							<img class="project-image" src="{{image}}"/>
 						</div>
-						<div class="project-status green-inline">${{fundsRaised}}/${{fundsRequired}}</div>
-						<div class="project-donations">x Donations</div>
+						<div class="project-text-container">
+							<div class="project-title">{{project}}</div>
+							<div class="organization-title">{{organization}}</div>
+							<progress max="{{fundsRequired}}" value="{{fundsRaised}}"></progress>
+							<div class="percent-text inline project-stat"><div class="weight-600">50%</div><div class="weight-300">funded</div></div>
+							<div class="percent-text inline project-stat"><div class="weight-600">${{fundsRaised}}</div><div class="weight-300">raised</div></div>
+							<div class="percent-text inline project-stat"><div class="weight-600">500</div><div class="weight-300">donations</div></div>
+						</div>
 					</div>
 
 					<div class="modal">
@@ -33,12 +38,31 @@
 					    	<label class="modal-overlay" for="{{_id}}"></label>
 					    	<div class="modal-dialog">
 						      	<div class="modal-header">
-						        	<h2>{{project}}</h2>
+						      		<center>
+						        	<div class="project-modal-header weight-600">{{project}}</div>
+						        	<div class="project-modal-subheader weight-300">from {{organization}}</div>
+						        	</center>
 						        	<label class="btn-close" for="{{_id}}" aria-hidden="true">× </label>
 						      	</div>
 						      	<div class="modal-body">
-								  	<div class="modal-footer">
-								  	</div>
+						      		<div class="project-modal-center">
+						      			<div class="inline vertical-center">
+							      		<div class="circular-image-container">
+							      			<img class="project-image" src="{{image}}"/>
+							      		</div>
+							      		</div>
+							      		<div class="project-stat-container inline">
+							      			<div class="big-stat weight-600">${{fundsRaised}}</div>
+							      			<div class="stat-line weight-300">reached of ${{fundsRequired}} goal</div>
+							      			<br>
+								      		<div class="big-stat weight-600">500</div>
+								      		<div class="stat-line weight-300">donations received</div>
+										</div>
+									</div>
+
+						      		<progress max="{{fundsRequired}}" value="{{fundsRaised}}"></progress>
+						      		{{description}}
+								  	<div class="modal-footer">{{organization}}</div>
 						      	</div>
 					    	</div>
 					  	</div>

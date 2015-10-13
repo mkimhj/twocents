@@ -14,7 +14,15 @@
 #navbar-signup-button {
   margin-left: 10px;
   font-size: 14px;
-  padding: 0px 15px;
+  padding: 0px 18px;
+  background-color: #49a380;
+  border: none;
+  border-radius: 3px;
+}
+
+#navbar-signup-button:hover {
+  background-color: #69c3a0;
+  color: white;
 }
 
 #navigation {
