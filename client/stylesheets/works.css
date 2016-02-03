@@ -25,7 +25,6 @@
 .works-section {
   display: inline-block;
   vertical-align: top;
-  width: 28%;
 }
 
 .sub-image {
@@ -74,6 +73,7 @@
 }
 /* Larger than phablet */
 @media (min-width: 550px) {
+
 }
 
 /* Larger than tablet */
@@ -83,10 +83,10 @@
     height: 355px;
     font-size: 12px;
   }
-/*  #register, #share, #email {
-    background-image: url("");
-    background-color: #f6f6f6;
-  }*/
+
+  .works-section {
+    width: 28%;
+  }
 }
 
 /* Larger than desktop */

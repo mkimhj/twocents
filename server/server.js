@@ -1,6 +1,27 @@
 Donors = new Mongo.Collection("donors");
 var gateway;
 
+function incrementDonationCount() {
+  var currentProject = Projects.find({completed: false}, {sort: {dateFormatted: 1}, limit: 1}).fetch()[0];
+
+  if (currentProject) {
+    if (!currentProject.donationCount) {
+      currentProject.donationCount = 0;
+    }
+
+    Projects.update(
+      {_id: currentProject._id},
+      {$set:{
+        fundsRaised: (parseFloat(currentProject.fundsRaised) + .02).toFixed(2),
+        completed: (parseFloat(currentProject.fundsRaised) >= parseFloat(currentProject.fundsRequired)) ? true : false,
+        donationCount: parseInt(currentProject.donationCount) + 1,
+        percentCompleted: parseInt(100 * (currentProject.fundsRaised / currentProject.fundsRequired))
+      }});
+  }
+
+  Meteor.setTimeout(incrementDonationCount, Meteor.settings.MILLISECONDS_IN_DAY / Donors.find().count());
+}
+
 //Code that runs on startup.
 Meteor.startup(function () {
   // Braintree Setup
@@ -34,6 +55,8 @@ Meteor.startup(function () {
   Meteor.publish('projects', function() {
     return Projects.find({});
   });
+
+  incrementDonationCount();
 });
 
 Meteor.methods({
@@ -178,7 +201,11 @@ Meteor.methods({
                  fundsRaised: fundsRaised,
                  fundsRequired: fundsRequired,
                  targetDate: targetDate,
-                 dateFormatted: dateFormatted}});
+                 dateFormatted: dateFormatted,
+                 completed: (fundsRaised == fundsRequired) ? true : false,
+                 donationCount: fundsRaised / 0.02,
+                 percentCompleted: parseInt(100 * (fundsRaised / fundsRequired))
+               }});
       } else {
         //insert
         Projects.insert({
@@ -189,7 +216,10 @@ Meteor.methods({
           fundsRaised: fundsRaised,
           fundsRequired: fundsRequired,
           targetDate: targetDate,
-          dateFormatted: dateFormatted
+          dateFormatted: dateFormatted,
+          completed: (fundsRaised == fundsRequired) ? true : false,
+          donationCount: 0,
+          percentCompleted: parseInt(100 * (fundsRaised / fundsRequired))
         });
       }
   },

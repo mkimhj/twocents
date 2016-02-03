@@ -134,23 +134,19 @@ footer {
 
 #fader {
   display: block;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: white;
+  z-index: 999999;
 }
 
 #opener {
   height: 7vh;
   padding-top: 44vh;
 }
-
-#fader {
-   position: fixed;
-   left: 0px;
-   right: 0px;
-   top: 0px;
-   bottom: 0px;
-   background-color: white;
-   z-index: 999999;
-
- }
 
 
 .triangle {

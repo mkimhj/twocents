@@ -4,7 +4,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 jquery
 adrianliaw:youtube-iframe-api
 grove:stripe.js
@@ -24,3 +23,16 @@ iron:router
 mrt:facebook-sdk
 accounts-password
 accounts-ui-unstyled
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check

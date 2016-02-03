@@ -2,6 +2,10 @@
 	display: none;
 }
 
+.dashboard-container {
+	max-width: 100%;
+}
+
 .login-close-text {
 	display: none;
 }

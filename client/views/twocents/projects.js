@@ -19,7 +19,24 @@ Template.projects.events({
 
 Template.projects.helpers({
 	projects: function() {
-		return Projects.find({}, {sort: {dateFormatted: -1}, limit:3});
+		var projectList = [];
+		var oneCompletedProject = Projects.find({"completed": true}, {sort: {dateFormatted: -1}, limit: 1});
+		var notCompletedProjects = Projects.find({"completed": false}, {sort: {dateFormatted: 1}, limit: 2});
+
+		notCompletedProjects.forEach(function(project) {
+			projectList.push(project);
+		});
+
+		//swap the return values
+		var temp = projectList[0];
+		projectList[0] = projectList[1];
+		projectList[1] = temp;
+
+		oneCompletedProject.forEach(function(project) {
+			projectList.push(project);
+		});
+
+		return projectList;
 	}
 });
 
