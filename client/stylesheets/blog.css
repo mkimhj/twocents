@@ -33,7 +33,6 @@
 }
 
 .blog-image {
-
   max-height: 420px;
   padding: 10px;
   padding-bottom: 20px;
@@ -46,6 +45,7 @@
 
 .blog-image img {
   max-height: 420px;
+  max-width: 920px;
 }
 
 .blog-caption {
