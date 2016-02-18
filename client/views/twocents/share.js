@@ -7,6 +7,15 @@ window.fbAsyncInit = function() {
 	});
 };
 
+Template.ApplicationLayout.events({
+	'click #nav-share': function(event) {
+		console.log("test");
+		var shareContainer = $(".share-container");
+		shareContainer.removeClass("hide");
+		shareContainer.velocity({top:"50%", opacity: .98}, 200, "ease");
+	}
+})
+
 // Share Template Events
 Template.share.events({
 	'click #facebook-button': function(event) {
@@ -25,5 +34,10 @@ Template.share.events({
 		var top = (screen.height/2)-(height/2);
 		var windowSpecs = "width="+width+",height="+height+",top="+top+",left="+left;
 		window.open(URL, windowName, windowSpecs);
+	},
+
+	'click #share-close-button': function(event) {
+		$(".share-container").velocity({top:"0%", opacity: 0}, 200, "ease");
+		$(".shareContainer").addClass("hide");
 	}
 });

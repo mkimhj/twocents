@@ -12,12 +12,18 @@
         <li class="logo-nav"><a class="logo-background" href="/"></a></li>
 
         <li class="nav-item"><label class="button button-white" id="navbar-signup-button" for="modal-one">Donate Now</label></li>
+		<li id="nav-share" class="nav-item white-text"><a href="">Share</a></li>
         <li class="nav-item white-text"><a href="/blog">Blog</a></li>
         <li class="nav-item white-text"><a href="/about">About</a></li>
       </ul>
     </nav>
 
     <!-- Template -->
+
+    <div class="share-container hide">
+    	{{>share}}
+    </div>
+
   	{{> yield}}
 
   	<!-- Footer -->
@@ -41,4 +47,6 @@
 	{{> stripePayment}}
 	{{> paypalPayment}}
 </template>
+
+
 

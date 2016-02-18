@@ -1,0 +1,33 @@
+.share-container{
+	position: fixed;
+    transform: translate(-50%, -70%);
+    top: 0%;
+    left: 50%;
+	width: 80%;
+	max-width: 550px;
+	z-index: 10000;
+	background-color: white;
+	border-radius: 5px;
+	padding: 40px 0px 20px 0px;
+	opacity: 0;
+}
+
+.share-section-header {
+	padding-top: 10px;
+}
+
+#share-close-button {
+  color: black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right:20px;
+  padding-top: 5px;
+  font-size: 2em;
+  opacity: 1;
+}
+
+#share-close-button:hover{
+  cursor:pointer;
+  color:#59b390;
+}
