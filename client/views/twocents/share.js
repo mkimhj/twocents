@@ -9,7 +9,6 @@ window.fbAsyncInit = function() {
 
 Template.ApplicationLayout.events({
 	'click #nav-share': function(event) {
-		console.log("test");
 		var shareContainer = $(".share-container");
 		shareContainer.removeClass("hide");
 		shareContainer.velocity({top:"50%", opacity: .98}, 200, "ease");
