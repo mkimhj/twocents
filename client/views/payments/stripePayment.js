@@ -2,7 +2,7 @@ Stripe.setPublishableKey(Meteor.settings.public.STRIPE_PUBLIC_KEY);
 
 var sandboxMode = Meteor.settings.public.SANDBOX_MODE;
 
-function validateEmail(email) { 
+function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
@@ -45,6 +45,7 @@ function validateDetails() {
 //Session variables for form CSS
 Session.set("submitted", false);
 Session.set("success", false);
+Session.set("failed", false);
 
 Template.stripePayment.helpers({
   submitted: function() {
@@ -52,6 +53,9 @@ Template.stripePayment.helpers({
   },
   success: function() {
     return Session.get("success");
+  },
+  failed: function() {
+    return Session.get("failed");
   }
 });
 
@@ -114,6 +118,12 @@ Template.stripePayment.events({
 
   'click .paymentInput, blur .paymentInput, keypress .paymentInput': function(event) {
     validateDetails();
+  },
+
+  'click #try-again-button': function(event) {
+    Session.set("submitted", false);
+    Session.set("success", false);
+    Session.set("failed", false);
   }
 });
 
@@ -121,16 +131,20 @@ Template.stripePayment.events({
 function stripeResponseHandler(status, response) {
   if (response.error) {
     //Log any errors, if any. TODO: Handle the errors.
-    console.log(response.error);
+    console.log("ERROR:" + response.error);
+    Session.set('failed', true);
   } else {
     //Create a customer on the server side
-    Meteor.call('createCustomer', response.id, $('input.full-name').val(), $('#emailInput').val(), $('#commentInput').val(), response.created, function(err, response){
+    Meteor.call('createCustomer', response.id, $('input.full-name').val(), $('#emailInput').val(), function(err, response){
       if(err) {
         Session.set('serverDataResponse', "Error:" + err.reason);
+        Session.set('failed', true);
         return;
       }
       Session.set('serverDataResponse', response);
       Session.set("success", true);
+      Meteor.call('insertDonor', response.id, $('input.full-name').val(), $('#emailInput').val(), response.created);
+      Meteor.call('sendConfirmationEmail', $('input.full-name').val(), $('#emailInput').val(), $('#commentInput').val());
     });
   }
 };

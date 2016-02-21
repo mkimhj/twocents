@@ -4,13 +4,23 @@
 	Your donor registration was a success! You will receive a confirmation email from us shortly.  Thank you for making a difference and giving your two cents a day. <br><br>
 
 	<div class="weight-600">Please help us spread the word, and share your Two Cents!</div>
-	{{>share}}
+	{{>shareIcons}}
 	<br>
 
 	If you have any questions, feel free to contact us at <a href="mailto:hello@twocentsaday.com">hello@twocentsaday.com</a>. <br>
 
 	You can find us on:
 	<a href="https://www.facebook.com/twocentsaday">Facebook</a> | <a href="http://twitter.com/twocentsaday_">Twitter</a>
+	</center>
+</template>
+
+<template name="registrationFailed">
+	<center class="modal-registration-complete">
+	Unfortunately, it looks like the transaction failed. Please check your payment credentials and try again. <br><br>
+
+	If you have any questions, feel free to contact us at <a href="mailto:hello@twocentsaday.com">hello@twocentsaday.com</a>. <br><br>
+
+	<label class="button button-white" id="try-again-button">Try Again</label>
 	</center>
 </template>
 
@@ -28,9 +38,24 @@
 	        <label class="btn-close" for="modal-one" aria-hidden="true">× </label>
 	      </div>
 	      <div class="modal-body">
-			<div class="{{#if success}}hide{{else}}{{#if submitted}}show{{else}}hide{{/if}}{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up ... </p></div>
+			<div class="{{#if success}}
+							hide
+						{{else}}
+							{{#if failed}}
+								hide
+							{{else}}
+								{{#if submitted}}
+									show
+								{{else}}
+									hide
+								{{/if}}
+							{{/if}}
+						{{/if}}"><div class="loader"></div><p align="center">One moment while we sign you up ... </p></div>
 			<div class="{{#if success}}show{{else}}hide{{/if}}">
 				{{> registrationComplete}}
+			</div>
+			<div class="{{#if failed}}show{{else}}hide{{/if}}">
+				{{> registrationFailed}}
 			</div>
 			<form id='donation-form' class="{{#if submitted}}hide{{else}}show{{/if}}">
 			  <div class="row">

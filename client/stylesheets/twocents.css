@@ -89,6 +89,20 @@ body {
   transition: color .15s ease, background-color .15s ease, border-color .15s ease;
 }
 
+#try-again-button {
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 0px 18px;
+  background-color: #49a380;
+  border: none;
+  border-radius: 3px;
+}
+
+#try-again-button:hover {
+  background-color: #69c3a0;
+  color: white;
+}
+
 .button-black {
   color: #696d71;
 }

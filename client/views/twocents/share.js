@@ -37,6 +37,6 @@ Template.share.events({
 
 	'click #share-close-button': function(event) {
 		$(".share-container").velocity({top:"0%", opacity: 0}, 200, "ease");
-		$(".shareContainer").addClass("hide");
+		$(".share-container").addClass("hide");
 	}
 });

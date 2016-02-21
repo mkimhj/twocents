@@ -51,6 +51,9 @@ Meteor.startup(function () {
   // Sendgrid Setup
   process.env.MAIL_URL = Meteor.settings.SENDGRID_SMTP_URL;
 
+  // Future Setup
+  Future = Npm.require('fibers/future');
+
   // Publish nonprofit projects
   Meteor.publish('projects', function() {
     return Projects.find({});
@@ -61,8 +64,17 @@ Meteor.startup(function () {
 
 Meteor.methods({
   // Method to create a new Stripe subscriber
-  createCustomer: function (token, name, address, comment, timestamp) {
-    var success = true;
+  insertDonor: function(token, name, address, timestamp) {
+    Donors.insert({
+      stripeToken: token,
+      name: name,
+      email: address,
+      createdAt: timestamp,
+    });
+  },
+
+  createCustomer: function (token, name, address) {
+    var future = new Future();
 
     Stripe.customers.create({
       card: token,
@@ -70,28 +82,17 @@ Meteor.methods({
       email: address
     }, function(err, customer) {
         if (err) {
-          console.log("Thrown Error: " + err);
-          Email.send({
-            from: "error@twocentsaday.com",
-            to: "maruchi.kim@gmail.com",
-            subject: "Error on Server ",
-            text: String(err),
-          });
-          success = false;
+          console.log("[ERROR] createCustomer, " + err);
+          future.throw(err);
+        } else {
+          future.return(customer);
         }
     });
 
-    if (success) {
-      // Insert user into database to ensure no duplicates exist in the future.
-      Donors.insert({
-        stripeToken: token,
-        name: name,
-        email: address,
-        createdAt: timestamp,
-      });
-
-      // Send confirmation email
-      Meteor.call("sendConfirmationEmail", name, address, comment);
+    try {
+      return future.wait();
+    } catch(error) {
+      throw new Meteor.Error("606", "CVC Failed", error);
     }
   },
 
@@ -154,13 +155,7 @@ Meteor.methods({
             Meteor.call("sendConfirmationEmail", customer.firstName, customer.email, comment);
           })
         } else {
-            console.log("Thrown Error: " + err);
-            Email.send({
-              from: "error@twocentsaday.com",
-              to: "maruchi.kim@gmail.com",
-              subject: "Error on Server ",
-              text: String(err),
-            });
+            console.log("[ERROR] createPaypalCustomer" + err);
         }
       })
   },
@@ -174,7 +169,6 @@ Meteor.methods({
       to: email,
       subject: "Two Cents Subscription Confirmation",
       html: Handlebars.templates['confirmation']({ user: name })
-      // text: "Hello " + name + ",\n Thanks for signing up! Your two cents donations have begun (and will show as a $1.00 charge every fifty days on your bank statement). \n \n We really appreciate your contribution and hope you can help us spread the word by telling your friends and family. \n \n We'll reach you again at this email once we have collected enough donations to help make a difference. \n \n Here's to saving the world, \n The Two Cents Team"
     });
 
     console.log("Saving " + name + " to IFTTT");
